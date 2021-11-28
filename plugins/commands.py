@@ -53,7 +53,7 @@ IST = pytz.timezone(Config.TIME_ZONE)
 if Config.DATABASE_URI:
     from utils import db
 
-HOME_TEXT = "<b>Hey  [{}](tg://user?id={}) 🙋‍♂️\n\nIam A Bot Built To Play or Stream Videos In Telegram VoiceChats.\nI Can Stream Any YouTube Video Or A Telegram File Or Even A YouTube Live.</b>"
+HOME_TEXT = "<b>سلام  [{}](tg://user?id={}) 🙋‍♂️\n\nمن یک ربات پخش کننده موسیقی، فایل صوتی ویدیوها در چت های صوتی تلگرام (کانال،گروه)  هستم. همچنین من میتوانم می توانم هر ویدیوی یوتیوب یا یک فایل تلگرام یا حتی یک یوتیوب زنده را نیز پخش کنم.\n\nامکانات بسیار زیادی دارم. برای نصب و فعالسازی ربات روی دکمه 🧩 درخواست نصب ربات کلیک کرده و با سازنده من، مکاتبه نمایید.</b>"
 admin_filter=filters.create(is_admin) 
 
 @Client.on_message(filters.command(['start', f"start@{Config.BOT_USERNAME}"]))
