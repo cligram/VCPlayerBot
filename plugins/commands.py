@@ -130,11 +130,11 @@ async def start(client, message):
     buttons = [
         [
             InlineKeyboardButton('⚙️ کانال دیجی گرام 24', url='https://t.me/DigiGram24'),
-            InlineKeyboardButton('🧩 Source', url='https://github.com/jim926241/VCPlayerBot')
+            InlineKeyboardButton('🧩 درخواست نصب ربات', url='https://t.me/DIGRM')
         ],
         [
-            InlineKeyboardButton('👨🏼‍🦯 Help', callback_data='help_main'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton('👨🏼‍🦯 راهنما', callback_data='help_main'),
+            InlineKeyboardButton('🗑 بستن', callback_data='close'),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
