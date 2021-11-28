@@ -22,7 +22,7 @@
 
 #Pyrogram downloader modified to suit my needs. 
 #Downloads the file from telegram servers and retures the path of the file without waiting for the whole download to finish.
-#Copyright (C) @subinps
+#Copyright (C) @jim926241
 
 
 from .logger import LOGGER
