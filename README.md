@@ -1,10 +1,10 @@
 # VCPlayerBot
 
-![GitHub Repo stars](https://img.shields.io/github/stars/subinps/VCPlayerBot?color=blue&style=flat)
-![GitHub issues](https://img.shields.io/github/issues/subinps/VCPlayerBot)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/subinps/VCPlayerBot)
-![GitHub contributors](https://img.shields.io/github/contributors/subinps/VCPlayerBot?style=flat)
-![GitHub forks](https://img.shields.io/github/forks/subinps/VCPlayerBot?style=flat)
+![GitHub Repo stars](https://img.shields.io/github/stars/jim926241/VCPlayerBot?color=blue&style=flat)
+![GitHub issues](https://img.shields.io/github/issues/jim926241/VCPlayerBot)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/jim926241/VCPlayerBot)
+![GitHub contributors](https://img.shields.io/github/contributors/jim926241/VCPlayerBot?style=flat)
+![GitHub forks](https://img.shields.io/github/forks/jim926241/VCPlayerBot?style=flat)
 
 Telegram bot to stream videos in telegram voicechat for both groups and channels. Supports live streams, YouTube videos and telegram media. With record stream support, Schedule streams, and many more.
 
@@ -13,7 +13,7 @@ Telegram bot to stream videos in telegram voicechat for both groups and channels
 1. `API_ID` : Get From [my.telegram.org](https://my.telegram.org/)
 2. `API_HASH` : Get from [my.telegram.org](https://my.telegram.org)
 3. `BOT_TOKEN` : [@Botfather](https://telegram.dog/BotFather)
-4. `SESSION_STRING` : Generate From here [![GenerateStringName](https://img.shields.io/badge/repl.it-generateStringName-yellowgreen)](https://repl.it/@subinps/getStringName)
+4. `SESSION_STRING` : Generate From here [![GenerateStringName](https://img.shields.io/badge/repl.it-generateStringName-yellowgreen)](https://repl.it/@jim926241/getStringName)
 5. `CHAT` : ID of Channel/Group where the bot plays Music.
 
 ## Recommended Optional Vars
@@ -54,16 +54,16 @@ Telegram bot to stream videos in telegram voicechat for both groups and channels
 
 ## Deploy to Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/subinps/VCPlayerBot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jim926241/VCPlayerBot)
 
 ## Deploy to Railway
-<p><a href=https://github.com/subinps/VCPlayerBot/issues/7> <img src="https://img.shields.io/badge/Deploy%20To%20Railway-blueviolet?style=for-the-badge&logo=railway" width="200""/></a></p>
+<p><a href=https://github.com/jim926241/VCPlayerBot/issues/7> <img src="https://img.shields.io/badge/Deploy%20To%20Railway-blueviolet?style=for-the-badge&logo=railway" width="200""/></a></p>
 
  
 ## Deploy to VPS
 
 ```sh
-git clone https://github.com/subinps/VCPlayerBot
+git clone https://github.com/jim926241/VCPlayerBot
 cd VCPlayerBot
 pip3 install -r requirements.txt
 # <Create Variables appropriately (.env [optional])>
