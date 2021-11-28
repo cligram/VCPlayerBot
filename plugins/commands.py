@@ -129,7 +129,7 @@ async def start(client, message):
         return
     buttons = [
         [
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
+            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/DigiGram24'),
             InlineKeyboardButton('🧩 Source', url='https://github.com/jim926241/VCPlayerBot')
         ],
         [
