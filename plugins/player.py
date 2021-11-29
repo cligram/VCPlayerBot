@@ -482,7 +482,7 @@ allcmd = ["play", "player", f"play@{Config.BOT_USERNAME}", f"player@{Config.BOT_
 
 @Client.on_message(filters.command(admincmds) & ~admin_filter & chat_filter)
 async def notforu(_, m: Message):
-    k = await _.send_cached_media(chat_id=m.chat.id, file_id="CAACAgQAAxkBAAM_YaSW2QTcTfbt4qEQKjXo5pu0T9EAAo0JAAIsgihRhtq9HKRKQVUiBA", caption="You Are Not Authorized", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚡️Join Here', url='https://t.me/DIGRM')]]))
+    k = await _.send_cached_media(chat_id=m.chat.id, file_id="CAACAgQAAxkBAAM_YaSW2QTcTfbt4qEQKjXo5pu0T9EAAo0JAAIsgihRhtq9HKRKQVUiBA", caption="You Are Not Authorized", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('👨🏻‍🔧بیا اینجا', url='https://t.me/DIGRM')]]))
     await delete_messages([m, k])
 
 @Client.on_message(filters.command(allcmd) & ~chat_filter & filters.group)
