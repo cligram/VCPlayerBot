@@ -139,7 +139,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         ],
                     ]
                     )
-                await query.message.edit("Showing help menu, Choose from the below options.", reply_markup=reply_markup, disable_web_page_preview=True)
+                await query.message.edit("نمایش منوی راهنما، یکی از گزینه های زیر را انتخاب کنید.", reply_markup=reply_markup, disable_web_page_preview=True)
             elif nyav == 'play':
                 await query.message.edit(Config.PLAY_HELP, reply_markup=back, disable_web_page_preview=True)
             elif nyav == 'settings':
