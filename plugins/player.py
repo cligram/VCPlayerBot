@@ -183,7 +183,7 @@ async def add_to_playlist(_, message: Message):
             else:
                 Config.playlist.append(data)
             await add_to_db_playlist(data)        
-            await msg.edit("Media added to playlist")
+            await msg.edit("رسانه به لیست پخش اضافه شد")
         elif type in ["youtube", "query", "ytdl_s"]:
             if type=="youtube":
                 await msg.edit("⚡️ **Fetching Video From YouTube...**")
