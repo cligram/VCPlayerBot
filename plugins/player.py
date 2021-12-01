@@ -107,7 +107,7 @@ async def add_to_playlist(_, message: Message):
                 text = message.text.split(" ", 1)
                 query = text[1]
             else:
-                await msg.edit("You Didn't gave me anything to play.Reply to a video or a youtube link or a direct link.")
+                await msg.edit("⚠️خطا ، لطفا به یک موزیک یا ویدیو ریپلای و دستور را ارسال کنید و یا بعد از نوشتن دستور، یک فاصله گذاشته سپس یک لینک یوتیوب یا یک لینک مستقیم رسانه ارسال نمایید.")
                 await delete_messages([message, msg])
                 return
             regex = r"^(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?"
