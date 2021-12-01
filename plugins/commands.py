@@ -188,15 +188,15 @@ async def show_help(client, message):
 async def repo_(client, message):
     buttons = [
         [
-            InlineKeyboardButton('🧩 Repository', url='https://github.com/jim926241/VCPlayerBot'),
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/DigiGram24'),     
+            InlineKeyboardButton('🧩 سازنده ربات', url='https://t.me/DIGRM'),
+            InlineKeyboardButton('⚙️ کانال ربات', url='https://t.me/DigiGram24'),     
         ],
         [
             InlineKeyboardButton("🎞 How to Deploy", url='https://youtu.be/mnWgZMrNe_0'),
             InlineKeyboardButton('🗑 Close', callback_data='close'),
         ]
     ]
-    await message.reply("<b>The source code of this bot is public and can be found at <a href=https://github.com/jim926241/VCPlayerBot>VCPlayerBot.</a>\nYou can deploy your own bot and use in your group.\n\nFeel free to star☀️ the repo if you liked it 🙃.</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply("<b>برای اطلاع  بیشتر و نصب ربات پخش کننده موزیک و ویدیو در گروهتان با آیدی سازنده ربات در ارتباط باشید. <a href=https://t.me/DIGRM>DigiGram24.</a>\n هم ویدیو هم موزیک قابل پخش است.\n\nبدون محدویت حجم فایل 🙃.</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
     await delete_messages([message])
 
 @Client.on_message(filters.command(['restart', 'update', f"restart@{Config.BOT_USERNAME}", f"update@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
