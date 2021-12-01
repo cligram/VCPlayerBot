@@ -78,7 +78,7 @@ async def start(client, message):
                     ],
                 ]
                 )
-            await message.reply("Learn to use the DigiGram24, Showing help menu, Choose from the below options.",
+            await message.reply("آموزش استفاده از ربات پخش موزیک، نمایش منوی راهنما، یکی از گزینه های زیر را انتخاب کنید.",
                 reply_markup=reply_markup,
                 disable_web_page_preview=True
                 )
@@ -179,7 +179,7 @@ async def show_help(client, message):
     if Config.msg.get('help') is not None:
         await Config.msg['help'].delete()
     Config.msg['help'] = await message.reply_text(
-        "Learn to use the DigiGram24, Showing help menu, Choose from the below options.",
+        "آموزش استفاده از ربات پخش موزیک، نمایش منوی راهنما، یکی از گزینه های زیر را انتخاب کنید.",
         reply_markup=reply_markup,
         disable_web_page_preview=True
         )
