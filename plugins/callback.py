@@ -139,20 +139,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         ],
                     ]
                     )
-                await query.message.edit("Showing help menu, Choose from the below options.", reply_markup=reply_markup, disable_web_page_preview=True)
-            elif nyav == 'play':
+                await query.message.edit(" منوی راهنما ربات، یکی از گزینه های زیر را انتخاب کنید.", reply_markup=reply_markup, disable_web_page_preview=True)
+            elif nyav == 'پخش':
                 await query.message.edit(Config.PLAY_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'settings':
+            elif nyav == 'تنظیمات':
                 await query.message.edit(Config.SETTINGS_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'schedule':
+            elif nyav == 'برنامه':
                 await query.message.edit(Config.SCHEDULER_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'control':
+            elif nyav == 'کنترل':
                 await query.message.edit(Config.CONTROL_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'admin':
+            elif nyav == 'مدیریت':
                 await query.message.edit(Config.ADMIN_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'misc':
+            elif nyav == 'تنظیمات دیگر':
                 await query.message.edit(Config.MISC_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'record':
+            elif nyav == 'ضبط':
                 await query.message.edit(Config.RECORDER_HELP, reply_markup=back, disable_web_page_preview=True)
             elif nyav == 'env':
                 await query.message.edit(Config.ENV_HELP, reply_markup=back, disable_web_page_preview=True)
