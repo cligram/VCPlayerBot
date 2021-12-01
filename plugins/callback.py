@@ -114,8 +114,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             back=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("برگرد", callback_data="help_main"),
-                        InlineKeyboardButton("خروج", callback_data="close"),
+                        InlineKeyboardButton("Back", callback_data="help_main"),
+                        InlineKeyboardButton("Close", callback_data="close"),
                     ],
                 ]
                 )
@@ -123,36 +123,36 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(f"پخش", callback_data='help_play'),
-                            InlineKeyboardButton(f"تنظیمات", callback_data=f"help_settings"),
-                            InlineKeyboardButton(f"ضبط", callback_data='help_record'),
+                            InlineKeyboardButton(f"Play", callback_data='help_play'),
+                            InlineKeyboardButton(f"Settings", callback_data=f"help_settings"),
+                            InlineKeyboardButton(f"Recording", callback_data='help_record'),
                         ],
                         [
-                            InlineKeyboardButton("برنامه", callback_data="help_schedule"),
-                            InlineKeyboardButton("کنترل", callback_data='help_control'),
-                            InlineKeyboardButton("مدیریت", callback_data="help_admin"),
+                            InlineKeyboardButton("Scheduling", callback_data="help_schedule"),
+                            InlineKeyboardButton("Controling", callback_data='help_control'),
+                            InlineKeyboardButton("Admins", callback_data="help_admin"),
                         ],
                         [
-                            InlineKeyboardButton(f"تنظیمات دیگر", callback_data='help_misc'),
+                            InlineKeyboardButton(f"Misc", callback_data='help_misc'),
                             InlineKeyboardButton("Config Vars", callback_data='help_env'),
-                            InlineKeyboardButton("خروج", callback_data="close"),
+                            InlineKeyboardButton("Close", callback_data="close"),
                         ],
                     ]
                     )
-                await query.message.edit(" منوی راهنما ربات، یکی از گزینه های زیر را انتخاب کنید.", reply_markup=reply_markup, disable_web_page_preview=True)
-            elif nyav == 'پخش':
+                await query.message.edit("Showing help menu, Choose from the below options.", reply_markup=reply_markup, disable_web_page_preview=True)
+            elif nyav == 'play':
                 await query.message.edit(Config.PLAY_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'تنظیمات':
+            elif nyav == 'settings':
                 await query.message.edit(Config.SETTINGS_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'برنامه':
+            elif nyav == 'schedule':
                 await query.message.edit(Config.SCHEDULER_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'کنترل':
+            elif nyav == 'control':
                 await query.message.edit(Config.CONTROL_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'مدیریت':
+            elif nyav == 'admin':
                 await query.message.edit(Config.ADMIN_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'تنظیمات دیگر':
+            elif nyav == 'misc':
                 await query.message.edit(Config.MISC_HELP, reply_markup=back, disable_web_page_preview=True)
-            elif nyav == 'ضبط':
+            elif nyav == 'record':
                 await query.message.edit(Config.RECORDER_HELP, reply_markup=back, disable_web_page_preview=True)
             elif nyav == 'env':
                 await query.message.edit(Config.ENV_HELP, reply_markup=back, disable_web_page_preview=True)
