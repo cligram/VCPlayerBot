@@ -83,7 +83,7 @@ async def reply(client, message):
         Config.msg[message.chat.id]={"msg":m.updates[1].message.id, "s":message.message_id}
     except BotInlineDisabled:
         LOGGER.error(f"Error: Inline Mode for @{Config.BOT_USERNAME} is not enabled. Enable from @Botfather to enable PM Permit.")
-        await message.reply(f"{Config.REPLY_MESSAGE}\n\n<b>You can't use this bot in your group, for that you have to make your own bot from the [SOURCE CODE](https://github.com/jim926241/VCPlayerBot) below.</b>", disable_web_page_preview=True)
+        await message.reply(f"{Config.REPLY_MESSAGE}\n\n<b>💬 من یه ربات پخش کننده آهنگ و فیلم در گروه های تلگرامی هستم ، امکانات جذابی دارم و پرسرعت  هستم با من میتونی به راحتی توی  گروهت نا محدود موزیک پخش کنی ویدیو پخش کنی .حجم فایل هم مهم نیست تا 1.5 گیگ میتونی بهم فایل موزیک یا  فیلم بدی تا توی گروهت  به صورت زنده پخش کنم. ! [سازنده ربات](https://t.me/DIGRM) .</b>", disable_web_page_preview=True)
     except Exception as e:
         LOGGER.error(e, exc_info=True)
         pass
