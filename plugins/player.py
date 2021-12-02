@@ -187,11 +187,11 @@ async def add_to_playlist(_, message: Message):
             await msg.edit("Media added to playlist")
         elif type in ["youtube", "query", "ytdl_s"]:
             if type=="youtube":
-                await msg.edit("⚡️ **در حال دریافت ویدیو از یوتیوب...**")
+                await msg.edit("⚡️ **Fetching Video From YouTube...**")
                 url=yturl
             elif type=="query":
                 try:
-                    await msg.edit("⚡️ **در حال دریافت ویدیو از یوتیوب...**")
+                    await msg.edit("⚡️ **Fetching Video From YouTube...**")
                     ytquery=ysearch
                     results = YoutubeSearch(ytquery, max_results=1).to_dict()
                     url = f"https://youtube.com{results[0]['url_suffix']}"
