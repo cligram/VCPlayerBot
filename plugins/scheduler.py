@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (C) @jim926241
+# Copyright (C) @subinps
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -148,11 +148,11 @@ async def schedule_vc(bot, message):
             await sync_to_db()
         elif type in ["youtube", "query", "ytdl_s"]:
             if type=="youtube":
-                await msg.edit("⚡️ **Fetching Video From YouTube...**")
+                await msg.edit("⚡️ **در حال دریافت ویدیو از یوتیوب...**")
                 url=yturl
             elif type=="query":
                 try:
-                    await msg.edit("⚡️ **Fetching Video From YouTube...**")
+                    await msg.edit("⚡️ **در حال دریافت ویدیو از یوتیوب...**")
                     ytquery=ysearch
                     results = YoutubeSearch(ytquery, max_results=1).to_dict()
                     url = f"https://youtube.com{results[0]['url_suffix']}"
