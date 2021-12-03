@@ -1514,8 +1514,8 @@ async def settings_panel():
     reply_markup=InlineKeyboardMarkup(
         [
             [
-               InlineKeyboardButton(f"Player Mode", callback_data='info_mode'),
-               InlineKeyboardButton(f"{'🔂 Non Stop Playback' if Config.IS_LOOP else '▶️ Play and Leave'}", callback_data='is_loop'),
+               InlineKeyboardButton(f"حالت پخش کننده", callback_data='info_mode'),
+               InlineKeyboardButton(f"{'🔂 پخش بدون توقف' if Config.IS_LOOP else '▶️ پخش و ترک کردن'}", callback_data='is_loop'),
             ],
             [
                 InlineKeyboardButton("🎞 فیلم", callback_data=f"info_video"),
@@ -1526,16 +1526,16 @@ async def settings_panel():
                 InlineKeyboardButton(f"{'🔒 فعال' if Config.ADMIN_ONLY else '🔓 غیرفعال'}", callback_data='admin_only'),
             ],
             [
-                InlineKeyboardButton("🪶 Edit Title", callback_data=f"info_title"),
-                InlineKeyboardButton(f"{'✏️ Enabled' if Config.EDIT_TITLE else '🚫 Disabled'}", callback_data='edit_title'),
+                InlineKeyboardButton("🪶 تغییر عنوان", callback_data=f"info_title"),
+                InlineKeyboardButton(f"{'✏️ فعال' if Config.EDIT_TITLE else '🚫 غیرفعال'}", callback_data='edit_title'),
             ],
             [
-                InlineKeyboardButton("🔀 Shuffle Mode", callback_data=f"info_shuffle"),
-                InlineKeyboardButton(f"{'✅ Enabled' if Config.SHUFFLE else '🚫 Disabled'}", callback_data='set_shuffle'),
+                InlineKeyboardButton("🔀 حالت بُر زدن", callback_data=f"info_shuffle"),
+                InlineKeyboardButton(f"{'✅ فعال' if Config.SHUFFLE else '🚫 غیرفعال'}", callback_data='set_shuffle'),
             ],
             [
-                InlineKeyboardButton("👮 Auto Reply (PM Permit)", callback_data=f"info_reply"),
-                InlineKeyboardButton(f"{'✅ Enabled' if Config.REPLY_PM else '🚫 Disabled'}", callback_data='reply_msg'),
+                InlineKeyboardButton("👮 پاسخ خودکار (مجوز PM)", callback_data=f"info_reply"),
+                InlineKeyboardButton(f"{'✅ فعال' if Config.REPLY_PM else '🚫 غیرفعال'}", callback_data='reply_msg'),
             ],
             [
                 InlineKeyboardButton('🗑 خروج', callback_data='close'),
@@ -1551,19 +1551,19 @@ async def recorder_settings():
     reply_markup=InlineKeyboardMarkup(
         [
         [
-            InlineKeyboardButton(f"{'⏹ Stop Recording' if Config.IS_RECORDING else '⏺ Start Recording'}", callback_data='record'),
+            InlineKeyboardButton(f"{'⏹ متوقف کردن ضبط' if Config.IS_RECORDING else '⏺ شروع ضبط'}", callback_data='record'),
         ],
         [
-            InlineKeyboardButton(f"Record Video", callback_data='info_videorecord'),
-            InlineKeyboardButton(f"{'Enabled' if Config.IS_VIDEO_RECORD else 'Disabled'}", callback_data='record_video'),
+            InlineKeyboardButton(f"ضبط فیلم", callback_data='info_videorecord'),
+            InlineKeyboardButton(f"{'فعال' if Config.IS_VIDEO_RECORD else 'غیرفعال'}", callback_data='record_video'),
         ],
         [
-            InlineKeyboardButton(f"Video Dimension", callback_data='info_videodimension'),
-            InlineKeyboardButton(f"{'Portrait' if Config.PORTRAIT else 'Landscape'}", callback_data='record_dim'),
+            InlineKeyboardButton(f"ابعاد ویدیو", callback_data='info_videodimension'),
+            InlineKeyboardButton(f"{'عمودی' if Config.PORTRAIT else 'افقی'}", callback_data='record_dim'),
         ],
         [
-            InlineKeyboardButton(f"Custom Recording Title", callback_data='info_rectitle'),
-            InlineKeyboardButton(f"{Config.RECORDING_TITLE if Config.RECORDING_TITLE else 'Default'}", callback_data='info_rectitle'),
+            InlineKeyboardButton(f"عنوان سفارشی ضبط", callback_data='info_rectitle'),
+            InlineKeyboardButton(f"{Config.RECORDING_TITLE if Config.RECORDING_TITLE else 'پیشفرض'}", callback_data='info_rectitle'),
         ],
         [
             InlineKeyboardButton(f"Recording Dump Channel", callback_data='info_recdumb'),
