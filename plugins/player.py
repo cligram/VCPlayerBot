@@ -120,14 +120,14 @@ async def add_to_playlist(_, message: Message):
                     has_audio_ = await is_audio(query)
                 except:
                     has_audio_ = False
-                    LOGGER.error("Unable to get Audio properties within time.")
+                    LOGGER.error("دریافت اطلاعات بیشتر در مدت زمان ممکن نیست.")
                 if has_audio_:
                     try:
                         dur=await get_duration(query)
                     except:
                         dur=0
                     if dur == 0:
-                        await msg.edit("This is a live stream, Use /stream command.")
+                        await msg.edit("این یک پخش زنده است، از دستور /stream استفاده کنید.")
                         await delete_messages([message, msg])
                         return 
                     type="direct"
@@ -137,7 +137,7 @@ async def add_to_playlist(_, message: Message):
                         type="ytdl_s"
                         url=query
                     else:
-                        await msg.edit("This is an invalid link, provide me a direct link or a youtube link.")
+                        await msg.edit("این لینک نامعتبر است، لطفا یک لینک مستقیم یا یک لینک یوتیوب ارسال نمایید.")
                         await delete_messages([message, msg])
                         return
             else:
@@ -231,7 +231,7 @@ async def add_to_playlist(_, message: Message):
             else:
                 title = info["title"]
                 if info['duration'] is None:
-                    await msg.edit("This is a live stream, Use /stream command.")
+                    await msg.edit("این یک پخش زنده است، از دستور /stream استفاده کنید.")
                     await delete_messages([message, msg])
                     return 
             data={1:title, 2:url, 3:"youtube", 4:user, 5:f"{nyav}_{user_id}"}
@@ -250,7 +250,7 @@ async def add_to_playlist(_, message: Message):
             else:
                 Config.playlist.append(data)
             await add_to_db_playlist(data)        
-            await msg.edit("Link added to playlist")
+            await msg.edit("لینک به لیست پخش اضافه شد")
         if not Config.CALL_STATUS \
             and len(Config.playlist) >= 1:
             await msg.edit("درحال دانلود و پردازش ...")
@@ -282,11 +282,11 @@ async def add_to_playlist(_, message: Message):
 @Client.on_message(filters.command(["leave", f"leave@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def leave_voice_chat(_, m: Message):
     if not Config.CALL_STATUS:        
-        k=await m.reply("Not joined any voicechat.")
+        k=await m.reply("به چت صوتی ملحق نشده است.")
         await delete_messages([m, k])
         return
     await leave_call()
-    k=await m.reply("Succesfully left videochat.")
+    k=await m.reply("با موفقیت از چت ویدیویی خارج شد.")
     await delete_messages([m, k])
 
 
@@ -294,7 +294,7 @@ async def leave_voice_chat(_, m: Message):
 @Client.on_message(filters.command(["shuffle", f"shuffle@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def shuffle_play_list(client, m: Message):
     if not Config.CALL_STATUS:
-        k = await m.reply("Not joined any voicechat.")
+        k = await m.reply("به چت صوتی ملحق نشده است.")
         await delete_messages([m, k])
         return
     else:
@@ -310,7 +310,7 @@ async def shuffle_play_list(client, m: Message):
 @Client.on_message(filters.command(["clearplaylist", f"clearplaylist@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def clear_play_list(client, m: Message):
     if not Config.playlist:
-        k = await m.reply("Playlist is empty.")  
+        k = await m.reply("لیست پخش خالی است")  
         await delete_messages([m, k])
         return
     Config.playlist.clear()
@@ -396,10 +396,10 @@ async def yt_play_list(client, m: Message):
                 await delete_messages([m, k])
                 return
             ytplaylist=await m.reply_to_message.download()
-            status=await m.reply("Trying to get details from playlist.")
+            status=await m.reply("درحال دریافت جزئیات لیست پخش.")
             n=await import_play_list(ytplaylist)
             if not n:
-                await status.edit("Errors Occured while importing playlist.")
+                await status.edit("هشدار: هنگام وارد کردن لیست پخش، خطا هایی رخ داد.")
                 await delete_messages([m, status])
                 return
             if Config.SHUFFLE:
@@ -429,7 +429,7 @@ async def stream(client, m: Message):
             text = m.text.split(" ", 1)
             link = text[1]
         else:
-            k = await msg.edit("Provide a link to stream!")
+            k = await msg.edit("لطفا یک لینک برای پخش زنده ارائه دهید!")
             await delete_messages([m, k])
             return
         regex = r"^(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?"
@@ -437,7 +437,7 @@ async def stream(client, m: Message):
         if match:
             stream_link=await get_link(link)
             if not stream_link:
-                k = await msg.edit("This is an invalid link.")
+                k = await msg.edit("این لینک، نامعتبر است.")
                 await delete_messages([m, k])
                 return
         else:
@@ -446,9 +446,9 @@ async def stream(client, m: Message):
             is_audio_ = await is_audio(stream_link)
         except:
             is_audio_ = False
-            LOGGER.error("Unable to get Audio properties within time.")
+            LOGGER.error("دریافت اطاعات بیشتر در مدت زمان ممکن نیست.")
         if not is_audio_:
-            k = await msg.edit("This is an invalid link, provide me a direct link or a youtube link.")
+            k = await msg.edit("این لینک نامعتبر است، لطفا یک لینک مستقیم یا یک لینک یوتیوب ارسال نمایید.")
             await delete_messages([m, k])
             return
         try:
@@ -456,7 +456,7 @@ async def stream(client, m: Message):
         except:
             dur=0
         if dur != 0:
-            k = await msg.edit("This is not a live stream, Use /play command.")
+            k = await msg.edit("این یک پخش زنده نیست، از دستور /play استفاده کنید.")
             await delete_messages([m, k])
             return
         k, msg_=await stream_from_link(stream_link)
@@ -496,7 +496,7 @@ async def not_chat(_, m: Message):
                 InlineKeyboardButton('No', callback_data='closesudo'),
             ]
             ]
-        await m.reply("This is not the group which i have been configured to play, Do you want to set this group as default CHAT?", reply_markup=InlineKeyboardMarkup(buttons))
+        await m.reply("این گروه، برای پخش پیکربندی نشده است، آیا می خواهید این گروه را به عنوان چت پیش فرض تنظیم کنید؟", reply_markup=InlineKeyboardMarkup(buttons))
         await delete_messages([m])
     else:
         buttons = [
