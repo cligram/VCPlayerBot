@@ -241,7 +241,7 @@ async def add_to_playlist(_, message: Message):
             else:
                 Config.playlist.append(data)
             await add_to_db_playlist(data)
-            await msg.edit(f"[{title}]({url}) added to playist", disable_web_page_preview=True)
+            await msg.edit(f"[{title}]({url}) به لیست پخش اضافه شد", disable_web_page_preview=True)
         elif type == "direct":
             data={1:"Music", 2:url, 3:"url", 4:user, 5:f"{nyav}_{user_id}"}
             if message.command[0] == "fplay":
