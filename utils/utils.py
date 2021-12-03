@@ -1480,7 +1480,7 @@ async def get_buttons():
                 ],
                 [
                     InlineKeyboardButton(f"⏯ {get_pause(Config.PAUSE)}", callback_data=f"{get_pause(Config.PAUSE)}"),
-                    InlineKeyboardButton('🔊 Volume Control', callback_data='volume_main'),
+                    InlineKeyboardButton('🔊 کنترل صدا', callback_data='volume_main'),
                     InlineKeyboardButton('🗑 خروج', callback_data='close'),
                 ],
             ]
