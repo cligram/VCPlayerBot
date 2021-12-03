@@ -1468,7 +1468,7 @@ async def get_buttons():
             [
                 [
                     InlineKeyboardButton(f"🎸 Start the Player", callback_data="restart"),
-                    InlineKeyboardButton('🗑 Close', callback_data='close'),
+                    InlineKeyboardButton('🗑 خروج', callback_data='close'),
                 ],
             ]
             )
@@ -1518,12 +1518,12 @@ async def settings_panel():
                InlineKeyboardButton(f"{'🔂 Non Stop Playback' if Config.IS_LOOP else '▶️ Play and Leave'}", callback_data='is_loop'),
             ],
             [
-                InlineKeyboardButton("🎞 Video", callback_data=f"info_video"),
-                InlineKeyboardButton(f"{'📺 Enabled' if Config.IS_VIDEO else '🎙 Disabled'}", callback_data='is_video'),
+                InlineKeyboardButton("🎞 فیلم", callback_data=f"info_video"),
+                InlineKeyboardButton(f"{'📺 فعال' if Config.IS_VIDEO else '🎙 غیرفعال'}", callback_data='is_video'),
             ],
             [
-                InlineKeyboardButton("🤴 Admin Only", callback_data=f"info_admin"),
-                InlineKeyboardButton(f"{'🔒 Enabled' if Config.ADMIN_ONLY else '🔓 Disabled'}", callback_data='admin_only'),
+                InlineKeyboardButton("🤴 فقط مدیران", callback_data=f"info_admin"),
+                InlineKeyboardButton(f"{'🔒 فعال' if Config.ADMIN_ONLY else '🔓 غیرفعال'}", callback_data='admin_only'),
             ],
             [
                 InlineKeyboardButton("🪶 Edit Title", callback_data=f"info_title"),
@@ -1538,7 +1538,7 @@ async def settings_panel():
                 InlineKeyboardButton(f"{'✅ Enabled' if Config.REPLY_PM else '🚫 Disabled'}", callback_data='reply_msg'),
             ],
             [
-                InlineKeyboardButton('🗑 Close', callback_data='close'),
+                InlineKeyboardButton('🗑 خروج', callback_data='close'),
             ]
             
         ]
@@ -1570,7 +1570,7 @@ async def recorder_settings():
             InlineKeyboardButton(f"{Config.RECORDING_DUMP if Config.RECORDING_DUMP else 'Not Dumping'}", callback_data='info_recdumb'),
         ],
         [
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton('🗑 خروج', callback_data='close'),
         ]
         ]
     )
@@ -1589,8 +1589,8 @@ async def volume_buttons():
             InlineKeyboardButton(f"+ 10", callback_data='volume_add'),
         ],
         [
-            InlineKeyboardButton(f"🔙 Back", callback_data='volume_back'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton(f"🔙 برگشت", callback_data='volume_back'),
+            InlineKeyboardButton('🗑 خروج', callback_data='close'),
         ]
         ]
     )
