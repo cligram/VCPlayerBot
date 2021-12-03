@@ -353,7 +353,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_reply_markup(reply_markup=await get_buttons())
     
 
-        elif query.data.lower() == "مکث":
+        elif query.data.lower() == "pause":
             if Config.PAUSE:
                 await query.answer("Already Paused", show_alert=True)
             else:
@@ -364,7 +364,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_reply_markup(reply_markup=await get_buttons())
  
         
-        elif query.data.lower() == "ادامه":   
+        elif query.data.lower() == "resume":   
             if not Config.PAUSE:
                 await query.answer("Nothing Paused to resume", show_alert=True)
             else:
