@@ -63,7 +63,7 @@ async def schedule_vc(bot, message):
         type=""
         yturl=""
         ysearch=""
-        msg = await message.reply_text("⚡️ **Checking recived input..**")
+        msg = await message.reply_text("⚡️ **درحال بررسی ورودی دریافتی..**")
         if message.reply_to_message and message.reply_to_message.video:
             await msg.edit("⚡️ **Checking Telegram Media...**")
             type='video'
