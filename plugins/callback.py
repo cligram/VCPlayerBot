@@ -129,7 +129,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         ],
                         [
                             InlineKeyboardButton("Scheduling", callback_data="help_schedule"),
-                            InlineKeyboardButton("کنترل", callback_data='help_control'),
+                            InlineKeyboardButton("Controling", callback_data='help_control'),
                             InlineKeyboardButton("Admins", callback_data="help_admin"),
                         ],
                         [
