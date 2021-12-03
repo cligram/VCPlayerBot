@@ -195,7 +195,7 @@ class Config:
 
     #help strings 
     PLAY_HELP="""
-__You can play using any of these options__
+__شما می توانید با استفاده از هر یک از  دستورات زیر رسانه مورد نظر خود را پخش کنید.__
 
 1. Play a video from a YouTube link.
 Command: **/play**
