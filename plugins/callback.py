@@ -355,10 +355,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         elif query.data.lower() == "مکث":
             if Config.PAUSE:
-                await query.answer("Already Paused", show_alert=True)
+                await query.answer("پخش قبلاً متوقف شده است.", show_alert=True)
             else:
                 await pause()
-                await query.answer("Stream Paused")
+                await query.answer("پخش متوقف شد.")
                 await sleep(1)
 
             await query.message.edit_reply_markup(reply_markup=await get_buttons())
@@ -366,16 +366,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
         elif query.data.lower() == "ادامه":   
             if not Config.PAUSE:
-                await query.answer("Nothing Paused to resume", show_alert=True)
+                await query.answer("چیزی پخش نشده است که ادامه آن پخش شود.", show_alert=True)
             else:
                 await resume()
-                await query.answer("Redumed the stream")
+                await query.answer("پخش از ادامه شروع شد.")
                 await sleep(1)
             await query.message.edit_reply_markup(reply_markup=await get_buttons())
           
         elif query.data=="skip": 
             if not Config.playlist:
-                await query.answer("No songs in playlist", show_alert=True)
+                await query.answer("هیچ رسانه ای در لیست پخش وجود ندارد.", show_alert=True)
             else:
                 await query.answer("درحال رد کردن لیست پخش.")
                 await skip()
@@ -393,7 +393,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         elif query.data=="replay":
             if not Config.playlist:
-                await query.answer("No songs in playlist", show_alert=True)
+                await query.answer("هیچ رسانه ای در لیست پخش وجود ندارد.", show_alert=True)
             else:
                 await query.answer("trying to restart player")
                 await restart_playout()
