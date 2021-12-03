@@ -1497,8 +1497,8 @@ async def get_buttons():
                     InlineKeyboardButton(f"⏭ برو جلو", callback_data='seek'),
                 ],
                 [
-                    InlineKeyboardButton("🔄 بُر زدن", callback_data="shuffle"),
-                    InlineKeyboardButton("⏩ مکث", callback_data="skip"),
+                    InlineKeyboardButton("🔄 بهم ریختن", callback_data="shuffle"),
+                    InlineKeyboardButton("⏩ بعدی", callback_data="skip"),
                     InlineKeyboardButton("⏮ پخش مجدد", callback_data="replay"),
                 ],
                 [
