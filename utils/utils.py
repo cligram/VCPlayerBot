@@ -1481,7 +1481,7 @@ async def get_buttons():
                 [
                     InlineKeyboardButton(f"⏯ {get_pause(Config.PAUSE)}", callback_data=f"{get_pause(Config.PAUSE)}"),
                     InlineKeyboardButton('🔊 Volume Control', callback_data='volume_main'),
-                    InlineKeyboardButton('🗑 Close', callback_data='close'),
+                    InlineKeyboardButton('🗑 خروج', callback_data='close'),
                 ],
             ]
             )
@@ -1497,13 +1497,13 @@ async def get_buttons():
                     InlineKeyboardButton(f"⏭ برو جلو", callback_data='seek'),
                 ],
                 [
-                    InlineKeyboardButton("🔄 Shuffle", callback_data="shuffle"),
-                    InlineKeyboardButton("⏩ Skip", callback_data="skip"),
-                    InlineKeyboardButton("⏮ Replay", callback_data="replay"),
+                    InlineKeyboardButton("🔄 بُر زدن", callback_data="shuffle"),
+                    InlineKeyboardButton("⏩ مکث", callback_data="skip"),
+                    InlineKeyboardButton("⏮ پخش مجدد", callback_data="replay"),
                 ],
                 [
-                    InlineKeyboardButton('🔊 Volume Control', callback_data='volume_main'),
-                    InlineKeyboardButton('🗑 Close', callback_data='close'),
+                    InlineKeyboardButton('🔊 کنترل صدا', callback_data='volume_main'),
+                    InlineKeyboardButton('🗑 خروج', callback_data='close'),
                 ]
             ]
             )
