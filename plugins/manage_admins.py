@@ -30,7 +30,7 @@ from utils import (
 async def add_admin(client, message):
     if message.reply_to_message:
         if message.reply_to_message.from_user.id is None:
-            k = await message.reply("You are an anonymous admin, you can't do this.")
+            k = await message.reply("شما یک ادمین ناشناس هستید، نمی توانید این کار را انجام دهید.")
             await delete_messages([message, k])
             return
         user_id=message.reply_to_message.from_user.id
@@ -53,7 +53,7 @@ async def add_admin(client, message):
                 user_id=int(user)
                 user=await client.get_users(user_id)
             except:
-                k=await message.reply(f"You should give a user id or his username with @.")
+                k=await message.reply(f"شما باید یک شناسه کاربری یا نام کاربری او را با @ بدهید.")
                 await delete_messages([message, k])
                 return
     else:
@@ -61,11 +61,11 @@ async def add_admin(client, message):
         await delete_messages([message, k])
         return
     if user_id in Config.ADMINS:
-        k = await message.reply("This user is already an admin.") 
+        k = await message.reply("این کاربر قبلاً یک مدیر است.") 
         await delete_messages([message, k])
         return
     Config.ADMINS.append(user_id)
-    k=await message.reply(f"Succesfully promoted {user.mention} as VC admin")
+    k=await message.reply(f"با موفقیت به ارتقا یافت {user.mention} مدیریت ربات پخش کننده")
     await sync_to_db()
     await delete_messages([message, k])
 
@@ -74,7 +74,7 @@ async def add_admin(client, message):
 async def remove_admin(client, message):
     if message.reply_to_message:
         if message.reply_to_message.from_user.id is None:
-            k = await message.reply("You are an anonymous admin, you can't do this.")
+            k = await message.reply("شما یک ادمین ناشناس هستید، نمی توانید این کار را انجام دهید.")
             await delete_messages([message, k])
             return
         user_id=message.reply_to_message.from_user.id
@@ -96,7 +96,7 @@ async def remove_admin(client, message):
                 user_id=int(user)
                 user=await client.get_users(user_id)
             except:
-                k = await message.reply(f"You should give a user id or his username with @.")
+                k = await message.reply(f"شما باید یک شناسه کاربری یا نام کاربری او را با @ بدهید.")
                 await delete_messages([message, k])
                 return
     else:
@@ -104,11 +104,11 @@ async def remove_admin(client, message):
         await delete_messages([message, k])
         return
     if not user_id in Config.ADMINS:
-        k = await message.reply("This user is not an admin yet.")
+        k = await message.reply("این کاربر هنوز مدیر نیست.")
         await delete_messages([message, k])
         return
     Config.ADMINS.remove(user_id)
-    k = await message.reply(f"Succesfully Demoted {user.mention}")
+    k = await message.reply(f"با موفقیت تنزل یافت {user.mention}")
     await sync_to_db()
     await delete_messages([message, k])
 
@@ -117,6 +117,6 @@ async def remove_admin(client, message):
 async def refresh_admins(client, message):
     Config.ADMIN_CACHE=False
     await get_admins(Config.CHAT)
-    k = await message.reply("Admin list has been refreshed")
+    k = await message.reply("لیست مدیریت با موفقیت بروز شد.")
     await sync_to_db()
     await delete_messages([message, k])
