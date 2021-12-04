@@ -197,29 +197,29 @@ class Config:
     PLAY_HELP="""
 __شما می توانید با استفاده از هر یک از  دستورات زیر رسانه مورد نظر خود را پخش کنید.__
 
-1. پخش فیلم از یوتیوب
+**1. پخش فیلم از یوتیوب**
 دستور: **/play**
 __شما می توانید الف) روی لینک یوتیوب ریپلای کرده و دستور مربوطه را نوشته و ارسال نمایید. ب) لینک یوتیوب را در امتداد دستور، با یک فاصله ارسال کنید. ج) برای جست و جو در یوتیوب دستور مربوطه را نوشته و با یک فاصله، با تایپ عنوان، آن رسانه را در یوتیوب جست جو کنید. د) میتوانید روی عنوانی ریپلای کرده و دستور مربوطه را ارسال نمایید.__
 
-2. Play from a telegram file.
-Command: **/play**
+**2. پخش از فایل تلگرام.**
+دستور: **/play**
 __Reply to a supported media(video and documents or audio file ).__
 Note: __For both the cases /fplay also can be used by admins to play the song immediately without waiting for queue to end.__
 
 3. Play from a YouTube playlist
-Command: **/yplay**
+دستور: **/yplay**
 __First get a playlist file from @GetPlaylistBot or @DumpPlaylist and reply to playlist file.__
 
 4. Live Stream
-Command: **/stream**
+دستور: **/stream**
 __Pass a live stream URL or any direct URL to play it as stream.__
 
 5. Import an old playlist.
-Command: **/import**
+دستور: **/import**
 __Reply to a previously exported playlist file. __
 
 6. Channel Play
-Command: **/cplay**
+دستور: **/cplay**
 __Use `/cplay channel username or channel id` to play all the files from the given channel.
 By default both video files and documents will be played . You can add or remove the file type using `FILTERS` var. 
 For example , to stream audio, video and document from the channel use `/env FILTERS video document audio` . If you need only audio , you can use `/env FILTERS video audio` and so on.
