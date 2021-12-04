@@ -272,24 +272,22 @@ Command: **/cancelall**
 __Cancel all the scheduled streams__
 """
     RECORDER_HELP="""
-__With DigiGram24 you can easily record all your video chats.
-By default telegram allows you to record for a maximum duration of 4 hours. 
-An attempt to overcome this limit has been made by automatically restarting the recording after  4 hours__
+__با DigiGram24 می توانید به راحتی تمام چت های تصویری خود را ضبط کنید.
+تلگرام به طور پیش فرض به شما امکان ضبط حداکثر 4 ساعت را می دهد.__
 
-Command: **/record**
+دستور: **/record**
 
-AVAILABLE CONFIGURATIONS:
-1. Record Video: __If enabled both the video and audio of the stream will be recorded, otherwise only audio will be recorded.__
+توضیحات:
+1. ضبط فیلم: __اگر فعال باشد هم ویدیو و هم صدای استریم ضبط می شود، در غیر این صورت فقط صدا ضبط می شود.__
 
-2. Video dimension: __Choose between portrait and landscape dimensions for your recording__
+2. اندازه ویدیو: __ابعاد عمودی یا افقی برای ضبط خود انتخاب کنید__
 
-3. Custom Recording Title: __Set up a custom recording title for your recordings. Use a command /rtitle to configure this.
-To turn off the custom title, use `/rtitle False `__
+3. عنوان ضبط سفارشی: __یک عنوان ضبط سفارشی برای ضبط های خود تنظیم کنید. برای پیکربندی از یک دستور /rtitle استفاده کنید.
+برای خاموش کردن عنوان سفارشی، از `/rtitle False`__ استفاده کنید
 
-4. Recording Dumb: __You can set up forwarding all your recordings to a channel, this will be useful since otherwise recordings are sent to saved messages of streaming account.
-Setup using `RECORDING_DUMP` config.__
-
-⚠️ If you start a recording with DigiGram24, make sure you stop the same with DigiGram24.
+4. مدیریت فایل های ضبط: __می‌توانید ارسال همه ضبط‌های خود را به یک کانال ارسال کنید، این کار مفید خواهد بود زیرا در غیر این صورت ضبط‌ها به پیام‌های ذخیره‌شده اکانت پخش ارسال می‌شوند.
+راه اندازی با استفاده از پیکربندی «RECORDING_DUMP».__
+⚠️ اگر ضبط را با یک اکانت شروع کردید، مطمئن شوید برای توقف از همان اکانت استفاده کنید.
 
 """
 
