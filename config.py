@@ -326,23 +326,22 @@ __شما می توانید چند ثانیه را برای رد شدن بگذر�
 10. حذف بیصدا پخش.
 دستور : **/vcunmute**
 
-11. نمایش لیست پخشt.
+11. نمایش لیست پخش.
 دستور: **/playlist** 
 __از /player برای نمایش با دکمه های کنترل استفاده کنید
 """
 
     ADMIN_HELP="""
-__DigiGram24 allows to control admins, that is you can add admins and remove them easily.
-It is recommended to use a MongoDb database for better experience, else all you admins will get reset after restart.__
+ربات پخش کننده اجازه می دهد تا ادمین ها را کنترل کنید، یعنی می توانید ادمین ها را اضافه کنید و به راحتی آنها را حذف کنید.__
 
-Command: **/vcpromote**
-__You can promote a admin with their username or user id or by replying to that users message.__
+دستور: **/vcpromote**
+__شما می توانید یک مدیر را با نام کاربری یا شناسه کاربری خود یا با ریپلای کردن به آن پیام کاربران به ربات معرفی کنید.__
 
-Command: **/vcdemote**
-__Remove an admin from admin list__
+دستور: **/vcdemote**
+__حذف یک ادمین از لیست مدیریت__
 
-Command: **/refresh**
-__Refresh the admin list of chat__
+دستور: **/refresh**
+__لیست مدیریت چت را تازه کنید__
 """
 
     MISC_HELP="""
