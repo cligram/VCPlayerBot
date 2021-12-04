@@ -299,11 +299,11 @@ async def shuffle_play_list(client, m: Message):
         return
     else:
         if len(Config.playlist) > 2:
-            k=await m.reply_text(f"Playlist Shuffled.")
+            k=await m.reply_text(f"لیست پخش به هم ریخته شد.")
             await shuffle_playlist()
             await delete_messages([m, k])            
         else:
-            k=await m.reply_text(f"You cant shuffle playlist with less than 3 songs.")
+            k=await m.reply_text(f"شما نمی توانید لیست پخش را با کمتر از 3 آهنگ به هم بزنید.")
             await delete_messages([m, k])
 
 
