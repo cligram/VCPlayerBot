@@ -292,43 +292,43 @@ __با DigiGram24 می توانید به راحتی تمام چت های تصو�
 """
 
     CONTROL_HELP="""
-__DigiGram24 allows you to control your streams easily__
-1. Skip a song.
-Command: **/skip**
-__You can pass a number greater than 2 to skip the song in that position.__
+__دیجی گرام به شما این امکان را می دهد تا استریم های خود را به راحتی کنترل کنید__
+1. رد کردن رسانه.
+دستور: **/skip**
+__برای رد کردن آهنگ تک تک فقط خود دستور ارسال کننید: برای ردن کردن همزمان چند رسانه عددی بزرگتر از 2 را  جلو دستور با یک فاصله بنویسید و ارسال کنید.__
 
-2. Pause the player.
-Command: **/pause**
+2. متوقف کردن پخش.
+دستور: **/pause**
 
-3. Resume the player.
-Command: **/resume**
+3. از سر گیری پخش.
+دستور: **/resume**
 
-4. Change Volume.
-Command: **/volume**
-__Pass the volume in between 1-200.__
+4. تغییر میزان صدا.
+دستور: **/volume**
+__برای تنظیم صدا عددی بین 1 تا 200  جلو دستور با یک فاصله نوشته و ارسال کنید.__
 
-5. Leave the VC.
-Command: **/leave**
+5. خروج از حالت پخش.
+دستور: **/leave**
 
-6. Shuffle the playlist.
-Command: **/shuffle**
+6. لیست پخش را به هم بزنید.
+دستور: **/shuffle**
 
-7. Clear the current playlist queue.
-Command: **/clearplaylist**
+7. صف لیست پخش فعلی را پاک کنید.
+دستور: **/clearplaylist**
 
-8. Seek the video.
-Command: **/seek**
-__You can pass number of seconds to be skipped. Example: /seek 10 to skip 10 sec. /seek -10 to rewind 10 sec.__
+8. پخش ویویو را به جلو بکشید.
+دستور: **/seek**
+__شما می توانید چند ثانیه را برای رد شدن بگذرانید. مثال: /seek 10 تا رد شدن از 10 sec. /seek -10 تا عقب بردن 10 ثانیه.__
 
-9. Mute the player.
-Command: **/vcmute**
+9. بی صدا کردن پخش.
+دستور: **/vcmute**
 
-10. Unmute the player.
-Command : **/vcunmute**
+10. حذف بیصدا پخش.
+دستور : **/vcunmute**
 
-11. Shows the playlist.
-Command: **/playlist** 
-__Use /player to show with control buttons__
+11. نمایش لیست پخشt.
+دستور: **/playlist** 
+__از /player برای نمایش با دکمه های کنترل استفاده کنید
 """
 
     ADMIN_HELP="""
