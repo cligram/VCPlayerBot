@@ -57,7 +57,7 @@ async def add_admin(client, message):
                 await delete_messages([message, k])
                 return
     else:
-        k=await message.reply("No user specified, reply to a user with /vcpromote or pass a users user id or username.")
+        k=await message.reply("هیچ کاربری مشخص نشده است، با /vcdemote به یک پیام کاربر ریپلای کنید یا شناسه کاربری یا نام کاربری را ارسال کنید.")
         await delete_messages([message, k])
         return
     if user_id in Config.ADMINS:
@@ -100,7 +100,7 @@ async def remove_admin(client, message):
                 await delete_messages([message, k])
                 return
     else:
-        k = await message.reply("No user specified, reply to a user with /vcdemote or pass a users user id or username.")
+        k = await message.reply("هیچ کاربری مشخص نشده است، با /vcdemote به یک پیام کاربر ریپلای کنید یا شناسه کاربری یا نام کاربری را ارسال کنید.")
         await delete_messages([message, k])
         return
     if not user_id in Config.ADMINS:
