@@ -80,7 +80,7 @@ async def add_to_playlist(_, message: Message):
         url=""
         if message.command[0] == "fplay":
             if not (message.from_user is None and message.sender_chat or message.from_user.id in admins):
-                k=await message.reply("This command is only for admins.")
+                k=await message.reply("این دستور فقط برای ادمین ها می باشد.")
                 await delete_messages([message, k])
                 return
         msg = await message.reply_text("⚡️ **درحال بررسی ورودی دریافتی ...**")
@@ -93,7 +93,7 @@ async def add_to_playlist(_, message: Message):
             m_video = message.reply_to_message.document
             type='video'
             if not "video" in m_video.mime_type:
-                return await msg.edit("The given file is invalid")
+                return await msg.edit("فایل داده شده نامعتبر است")
         elif message.reply_to_message and message.reply_to_message.audio:
             #if not Config.IS_VIDEO:
                 #return await message.reply("Play from audio file is available only if Video Mode if turned off.\nUse /settings to configure ypur player.")
@@ -197,7 +197,7 @@ async def add_to_playlist(_, message: Message):
                     title = results[0]["title"][:40]
                 except Exception as e:
                     await msg.edit(
-                        "Song not found.\nTry inline mode.."
+                        "آهنگ پیدا نشد.\nحالت اینلاین را سعی کنید.."
                     )
                     LOGGER.error(str(e), exc_info=True)
                     await delete_messages([message, msg])
@@ -217,7 +217,7 @@ async def add_to_playlist(_, message: Message):
             except Exception as e:
                 LOGGER.error(e, exc_info=True)
                 await msg.edit(
-                    f"YouTube Download Error ❌\nError:- {e}"
+                    f"خطای دانلود YouTube ❌\nخطا:- {e}"
                     )
                 LOGGER.error(str(e))
                 await delete_messages([message, msg])
@@ -328,14 +328,14 @@ async def clear_play_list(client, m: Message):
 @Client.on_message(filters.command(["cplay", f"cplay@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def channel_play_list(client, m: Message):
     with suppress(MessageIdInvalid, MessageNotModified):
-        k=await m.reply("Setting up for channel play..")
+        k=await m.reply("راه اندازی برای پخش از کانال..")
         if " " in m.text:
             you, me = m.text.split(" ", 1)
             if me.startswith("-100"):
                 try:
                     me=int(me)
                 except:
-                    await k.edit("Invalid chat id given")
+                    await k.edit("شناسه گپ نامعتبر داده شده است")
                     await delete_messages([m, k])
                     return
                 try:
@@ -346,16 +346,16 @@ async def channel_play_list(client, m: Message):
                     await delete_messages([m, k])
                     return
                 except UserNotParticipant:
-                    LOGGER.error("Given channel is private and USER account is not a member of channel.")
-                    await k.edit("Given channel is private and USER account is not a member of channel.")
+                    LOGGER.error("کانال داده شده خصوصی است و حساب USER عضو کانال نیست.")
+                    await k.edit("کانال داده شده خصوصی است و حساب USER عضو کانال نیست.")
                     await delete_messages([m, k])
                     return
                 except Exception as e:
                     LOGGER.error(f"Errors occured while getting data abount channel - {e}", exc_info=True)
-                    await k.edit(f"Something went wrong- {e}")
+                    await k.edit(f"مشکلی پیش آمد- {e}")
                     await delete_messages([m, k])
                     return
-                await k.edit("Searching files from channel, this may take some time, depending on number of files in the channel.")
+                await k.edit("جستجوی فایل‌ها از کانال، بسته به تعداد فایل‌های موجود در کانال، ممکن است مدتی طول بکشد.")
                 st, msg = await c_play(me)
                 if st == False:
                     await m.edit(msg)
