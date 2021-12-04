@@ -197,9 +197,9 @@ class Config:
     PLAY_HELP="""
 __شما می توانید با استفاده از هر یک از  دستورات زیر رسانه مورد نظر خود را پخش کنید.__
 
-1. Play a video from a YouTube link.
-Command: **/play**
-__You can use this as a reply to a YouTube link or pass link along command. or as a reply to message to search that in YouTube.__
+1. پخش فیلم از یوتیوب
+دستور: **/play**
+__شما می توانید الف) روی لینک یوتیوب ریپلای کرده و دستور مربوطه را نوشته و ارسال نمایید. ب) لینک یوتیوب را در امتداد دستور، با یک فاصله ارسال کنید. ج) برای جست و جو در یوتیوب دستور مربوطه را نوشته و با یک فاصله، با تایپ عنوان، آن رسانه را در یوتیوب جست جو کنید. د) میتوانید روی عنوانی ریپلای کرده و دستور مربوطه را ارسال نمایید.__
 
 2. Play from a telegram file.
 Command: **/play**
