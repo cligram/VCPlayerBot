@@ -252,24 +252,24 @@ __برای پخش همه فایل‌ها از کانال داده شده از «
 
 """
     SCHEDULER_HELP="""
-__DigiGram24 allows you to schedule a stream. 
-This means you can schedule a stream for a future date and on the scheduled date, stream will be played automatically.
-At present you can schedule a stream for even one year!!. Make sure you have set up a databse, else you will loose your schedules whenever the player restarts. __
+__DigiGram24 به شما امکان می دهد یک استریم را برنامه ریزی کنید.
+این بدان معنی است که می توانید یک استریم را برای تاریخ آینده برنامه ریزی کنید و در تاریخ برنامه ریزی شده، استریم به طور خودکار پخش می شود.
+در حال حاضر شما می توانید یک استریم را حتی برای یک سال برنامه ریزی کنید!!.__
 
-Command: **/schedule**
+دستور: **/schedule**
 
-__Reply to a file or a youtube video or even a text message with schedule command.
-The replied media or youtube video will be scheduled and will be played on the scheduled date.
-The scheduling time is by default in IST and you can change the timezone using `TIME_ZONE` config.__
+__با دستور  به یک فایل یا ویدیوی یوتیوب یا حتی یک پیام متنی ریپلای کنید.
+رسانه ریپلای زده شده یا ویدیوی یوتیوب برنامه ریزی می شود و در تاریخ برنامه ریزی شده پخش می شود.
+زمان زمان‌بندی به‌طور پیش‌فرض در IST است و می‌توانید منطقه زمانی را با استفاده از پیکربندی «TIME_ZONE» تغییر دهید.__
 
-Command: **/slist**
-__View your current scheduled streams.__
+دستور: **/slist**
+__استریم های برنامه ریزی شده فعلی خود را مشاهده کنید.__
 
-Command: **/cancel**
-__Cancel a schedule by its schedule id, You can get the schedule id using /slist command__
+دستور: **/cancel**
+__یک برنامه را با شناسه زمانبدی لغو کنید، شناسه برنامه را با استفاده از دستور /list پیدا کنید__
 
-Command: **/cancelall**
-__Cancel all the scheduled streams__
+دستور: **/cancelall**
+__لغو همه پخش های برنامه ریزی شده__
 """
     RECORDER_HELP="""
 __با DigiGram24 می توانید به راحتی تمام چت های تصویری خود را ضبط کنید.
