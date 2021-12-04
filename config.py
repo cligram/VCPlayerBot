@@ -203,30 +203,30 @@ __شما می توانید الف) روی لینک یوتیوب ریپلای ک�
 
 **2. پخش از فایل تلگرام.**
 دستور: **/play**
-__Reply to a supported media(video and documents or audio file ).__
-Note: __For both the cases /fplay also can be used by admins to play the song immediately without waiting for queue to end.__
+__به یک رسانه (ویدئو و اسناد یا فایل صوتی) رپلای کنید.__
+نکته: __از دستور /fplay می توانید برای پخش آهنگ بلافاصله بدون انتظار برای پایان لیست پخش استفاده کنید.__
 
-3. Play from a YouTube playlist
+3. Play from a playlist
 دستور: **/yplay**
-__First get a playlist file from @GetPlaylistBot or @DumpPlaylist and reply to playlist file.__
+__با دستور /export لیست پخش دلخواه خود را  استخراج نمایید سپس دستور مربوطه روی فایل لیست پخش ریپلای کنید.__
 
-4. Live Stream
+4. پخش زنده
 دستور: **/stream**
-__Pass a live stream URL or any direct URL to play it as stream.__
+__یک لینک پخش زنده یوتبوب یا هر نشانی اینترنتی مستقیمی را برای پخش زنده ارسال کنید.__
 
-5. Import an old playlist.
+5. وارد کردن یک لیست پخش قدیمیt.
 دستور: **/import**
-__Reply to a previously exported playlist file. __
+__به فایل لیست پخش  استخراج شده قبلی ریپلای کنید.__
 
-6. Channel Play
+6. پخش کانال
 دستور: **/cplay**
-__Use `/cplay channel username or channel id` to play all the files from the given channel.
-By default both video files and documents will be played . You can add or remove the file type using `FILTERS` var. 
-For example , to stream audio, video and document from the channel use `/env FILTERS video document audio` . If you need only audio , you can use `/env FILTERS video audio` and so on.
-To set up the files from a channel as STARTUP_STREAM, so that the files will be automatically added to playlist on startup of bot. use `/env STARTUP_STREAM channel username or channel id`
+__برای پخش همه فایل‌ها از کانال داده شده از «/cplay» نام کاربری کانال یا شناسه کانال استفاده کنید.
+به طور پیش فرض فایل های ویدئویی و اسناد پخش می شوند. می‌توانید با استفاده از «FILTERS» نوع فایل را اضافه یا حذف کنید.
+به عنوان مثال، برای پخش زنده صدا، ویدیو و سند از کانال از «/env FILTERS فایل صوتی سند ویدیویی» استفاده کنید. اگر فقط به صدا نیاز دارید، می‌توانید از «/env FILTERS video audio» و غیره استفاده کنید.
+برای تنظیم فایل ها از یک کانال به عنوان STARTUP_STREAM، به طوری که فایل ها به طور خودکار به لیست پخش در هنگام راه اندازی ربات اضافه شوند. از «/env STARTUP_STREAM نام کاربری کانال یا شناسه کانال» استفاده کنید
 
-Note that for public channels you should use username of channels along with '@' and for private channels you should use channel id.
-For private channels , make sure both the bot and USER account is a member of channel.__
+توجه داشته باشید که برای کانال های عمومی باید از نام کاربری کانال به همراه '@' و برای کانال های خصوصی از شناسه کانال استفاده کنید.
+برای کانال های خصوصی، مطمئن شوید که هم ربات و هم حساب USER عضو کانال هستند.__
 """
     SETTINGS_HELP="""
 **You can easily customize you player as per you needs. The following configurations are available:**
