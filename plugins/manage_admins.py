@@ -65,7 +65,7 @@ async def add_admin(client, message):
         await delete_messages([message, k])
         return
     Config.ADMINS.append(user_id)
-    k=await message.reply(f"با موفقیت به ارتقا یافت {user.mention} مدیریت ربات پخش کننده")
+    k=await message.reply(f"کاربر  {user.mention}  با موفقیت به مدیریت ربات پخش کننده ارتقا یافت.")
     await sync_to_db()
     await delete_messages([message, k])
 
