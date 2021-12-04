@@ -65,19 +65,19 @@ async def schedule_vc(bot, message):
         ysearch=""
         msg = await message.reply_text("⚡️ **درحال بررسی ورودی دریافتی..**")
         if message.reply_to_message and message.reply_to_message.video:
-            await msg.edit("⚡️ **Checking Telegram Media...**")
+            await msg.edit("⚡️ **بررسی رسانه تلگرامی...**")
             type='video'
             m_video = message.reply_to_message.video       
         elif message.reply_to_message and message.reply_to_message.document:
-            await msg.edit("⚡️ **Checking Telegram Media...**")
+            await msg.edit("⚡️ **بررسی رسانه تلگرامی...**")
             m_video = message.reply_to_message.document
             type='video'
             if not "video" in m_video.mime_type:
-                return await msg.edit("The given file is invalid")
+                return await msg.edit("فایل داده شده نامعتبر است")
         elif message.reply_to_message and message.reply_to_message.audio:
             #if not Config.IS_VIDEO:
                 #return await message.reply("Play from audio file is available only if Video Mode if turned off.\nUse /settings to configure ypur player.")
-            await msg.edit("⚡️ **Checking Telegram Media...**")
+            await msg.edit("⚡️ **بررسی رسانه تلگرامی...**")
             type='audio'
             m_video = message.reply_to_message.audio       
         else:
@@ -87,7 +87,7 @@ async def schedule_vc(bot, message):
                 text = message.text.split(" ", 1)
                 query = text[1]
             else:
-                await msg.edit("You Didn't gave me anything to schedule. Reply to a video or a youtube link or a direct link.")
+                await msg.edit("رسانه ای برای زمان بندی ارسال نشد لطفا بعد از نوشتن دستور یک فاصله سپس لینک یوتیوب یا لینک مستقیم ارسال نمایید  یا ب) به لینک یوتیوب یا لینک مستقیم ریپلای کنید یا ج) به فایل رسانه تلگرامی ریپلای کنید")
                 await delete_messages([message, msg])
                 return
             regex = r"^(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?"
@@ -102,7 +102,7 @@ async def schedule_vc(bot, message):
                         type="ytdl_s"
                         url=query
                     else:
-                        await msg.edit("This is an invalid link, provide me a direct link or a youtube link.")
+                        await msg.edit("این یک لینک نامعتبر است، یک لینک مستقیم یا یک لینک یوتیوب ارسال نمایید.")
                         await delete_messages([message, msg])
                         return
                 type="direct"
@@ -203,7 +203,7 @@ async def schedule_vc(bot, message):
             await sync_to_db()
         if message.chat.type!='private' and message.from_user is None:
             await msg.edit(
-                text="You cant schedule from here since you are an anonymous admin. Click the schedule button to schedule through private chat.",
+                text="شما نمی توانید از اینجا برنامه ریزی کنید زیرا شما یک مدیر ناشناس هستید. برای برنامه ریزی از طریق چت خصوصی، روی دکمه زمان بندی کلیک کنید.",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
