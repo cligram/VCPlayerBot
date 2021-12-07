@@ -379,10 +379,10 @@ async def channel_play_list(client, m: Message):
                     await k.edit(f"Succesfully Added {msg} files from {chat.title} to playlist")
                     await delete_messages([m, k])
             else:
-                await k.edit("◂ برای پخش فایل های صوتی و تصویری یک کانال شناسه کانال یا نام کاربری کانال را  همانند مثال زیر ارسال نمایید.  \n◂مثال - /cplay @DigiGram24Files یا /cplay -1001099086891\n\n⚠️ برای کانال خصوصی، هم ربات و هم حساب USER باید عضو کانال باشند.")
+                await k.edit("The given channel is invalid. For private channels it should start with -100 and for public channels it should start with @\nExamples - `/cplay @DigiGram24Files or /cplay -1001099086891\n\nFor private channel, both bot and the USER account should be members of channel.")
                 await delete_messages([m, k])
         else:
-            await k.edit("◂ برای پخش فایل های صوتی و تصویری یک کانال شناسه کانال یا نام کاربری کانال را  همانند مثال زیر ارسال نمایید.  \n◂مثال - /cplay @DigiGram24Files یا /cplay -1001099086891\n\n⚠️ برای کانال خصوصی، هم ربات و هم حساب USER باید عضو کانال باشند.")")
+            await k.edit("You didn't gave me any channel. Give me a channel id or username from which i should play files . \nFor private channels it should start with -100 and for public channels it should start with @\nExamples - `/cplay @DigiGram24Files or /cplay -100125369865\n\nFor private channel, both bot and the USER account should be members of channel.")
             await delete_messages([m, k])
 
 
