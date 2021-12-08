@@ -326,5 +326,5 @@ async def seek_playout(client, m: Message):
 
 @Client.on_message(filters.command(["settings", f"settings@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def settings(client, m: Message):
-    await m.reply(f"Configure Your DigiGram24 Settings Here. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await settings_panel(), disable_web_page_preview=True)
+    await m.reply(f"• بخش مورد نظر را انتخاب کنید :\n ─┅━ صفحه تنظیمات ━┅─", reply_markup=await settings_panel(), disable_web_page_preview=True)
     await delete_messages([m])
