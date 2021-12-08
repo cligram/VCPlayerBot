@@ -415,7 +415,7 @@ async def yt_play_list(client, m: Message):
             else:
                 await delete_messages([m, status])
         else:
-            k=await m.reply("No playList file given. Use @GetPlayListBot  or search for a playlist in @DumpPlaylist to get a playlist file.")
+            k=await m.reply("◂ لیست پخشی برای پخش، ارسال نشده است.")
             await delete_messages([m, k])
 
 
