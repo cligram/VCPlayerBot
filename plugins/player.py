@@ -379,10 +379,10 @@ async def channel_play_list(client, m: Message):
                     await k.edit(f"Succesfully Added {msg} files from {chat.title} to playlist")
                     await delete_messages([m, k])
             else:
-                await k.edit("The given channel is invalid. For private channels it should start with -100 and for public channels it should start with @\nExamples - `/cplay @DigiGram24Files or /cplay -1001099086891\n\nFor private channel, both bot and the USER account should be members of channel.")
+                await k.edit("• هیچ کانالی جهت پخش ارائه نشده است. لطفا  شناسه یا نام کاربری کانال همانند مثال زیر ارسال نمایید تا فایل های آن کانال را پخش کنم.\n• مثال: \n/cplay @DigiGram24Files or /cplay -1001349494880\n\n◂ برای کانال خصوصی، هم ربات و هم اکانت USER باید عضو کانال باشند.")
                 await delete_messages([m, k])
         else:
-            await k.edit("You didn't gave me any channel. Give me a channel id or username from which i should play files . \nFor private channels it should start with -100 and for public channels it should start with @\nExamples - `/cplay @DigiGram24Files or /cplay -100125369865\n\nFor private channel, both bot and the USER account should be members of channel.")
+            await k.edit("• هیچ کانالی جهت پخش ارائه نشده است. لطفا  شناسه یا نام کاربری کانال همانند مثال زیر ارسال نمایید تا فایل های آن کانال را پخش کنم.\n• مثال: \n/cplay @DigiGram24Files or /cplay -1001349494880\n\n◂ برای کانال خصوصی، هم ربات و هم اکانت USER باید عضو کانال باشند.")
             await delete_messages([m, k])
 
 
@@ -392,7 +392,7 @@ async def yt_play_list(client, m: Message):
     with suppress(MessageIdInvalid, MessageNotModified):
         if m.reply_to_message is not None and m.reply_to_message.document:
             if m.reply_to_message.document.file_name != "YouTube_PlayList.json":
-                k=await m.reply("Invalid PlayList file given. Use @GetPlayListBot  or search for a playlist in @DumpPlaylist to get a playlist file.")
+                k=await m.reply("• لیست پخش نامعتبر است !")
                 await delete_messages([m, k])
                 return
             ytplaylist=await m.reply_to_message.download()
