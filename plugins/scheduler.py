@@ -222,7 +222,7 @@ async def schedule_vc(bot, message):
         m=obj.monthdayscalendar(year, month)
         button=[]
         button.append([InlineKeyboardButton(text=f"{str(smonth)}  {str(year)}",callback_data=f"sch_month_choose_none_none")])
-        days=["دوشنبه", "سه شنبه", "چهارشنبه", "پنچ شنبه", "جمعه", "شنبه", "یکشنبه"]
+        days=["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"]
         f=[]
         for day in days:
             f.append(InlineKeyboardButton(text=f"{day}",callback_data=f"day_info_none"))
