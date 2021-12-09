@@ -202,7 +202,7 @@ async def repo_(client, message):
 @Client.on_message(filters.command(['restart', 'update', f"restart@{Config.BOT_USERNAME}", f"update@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def update_handler(client, message):
     if Config.HEROKU_APP:
-        k = await message.reply("DIGI APP found, Restarting app to update.")
+        k = await message.reply("✅ فایل برنامه DIGI پیدا شد، ربات برای بروزرسانی مجدد راه‌اندازی می‌شود.")
         if Config.DATABASE_URI:
             msg = {"msg_id":k.message_id, "chat_id":k.chat.id}
             if not await db.is_saved("RESTART"):
@@ -211,7 +211,7 @@ async def update_handler(client, message):
                 await db.edit_config("RESTART", msg)
             await sync_to_db()
     else:
-        k = await message.reply("No DIGI APP found, Trying to restart.")
+        k = await message.reply("😥 هیچ فایل برنامه DIGI یافت نشد، در حال تلاش برای راه اندازی مجدد.")
         if Config.DATABASE_URI:
             msg = {"msg_id":k.message_id, "chat_id":k.chat.id}
             if not await db.is_saved("RESTART"):
