@@ -253,15 +253,15 @@ async def add_to_playlist(_, message: Message):
             await msg.edit("لینک به لیست پخش اضافه شد")
         if not Config.CALL_STATUS \
             and len(Config.playlist) >= 1:
-            await msg.edit("درحال دانلود و پردازش ...")
+            await msg.edit("◂ ربات درحال دانلود و پردازش رسانه ... لطفا کمی صبر کنید...")
             await download(Config.playlist[0], msg)
             await play()
         elif (len(Config.playlist) == 1 and Config.CALL_STATUS):
-            await msg.edit("درحال دانلود و پردازش ...")
+            await msg.edit("◂ ربات درحال دانلود و پردازش رسانه ... لطفا کمی صبر کنید...")
             await download(Config.playlist[0], msg)  
             await play()
         elif message.command[0] == "fplay":
-            await msg.edit("درحال دانلود و پردازش ...")
+            await msg.edit("◂ ربات درحال دانلود و پردازش رسانه ... لطفا کمی صبر کنید...")
             await download(Config.playlist[0], msg)  
             await play()
         else:
@@ -310,7 +310,7 @@ async def shuffle_play_list(client, m: Message):
 @Client.on_message(filters.command(["clearplaylist", f"clearplaylist@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def clear_play_list(client, m: Message):
     if not Config.playlist:
-        k = await m.reply("لیست پخش خالی است")  
+        k = await m.reply("◂ لیست پخش خالی است.")  
         await delete_messages([m, k])
         return
     Config.playlist.clear()
@@ -328,14 +328,14 @@ async def clear_play_list(client, m: Message):
 @Client.on_message(filters.command(["cplay", f"cplay@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def channel_play_list(client, m: Message):
     with suppress(MessageIdInvalid, MessageNotModified):
-        k=await m.reply("راه اندازی برای پخش از کانال..")
+        k=await m.reply("◂ در حال راه اندازی برای پخش از کانال ...")
         if " " in m.text:
             you, me = m.text.split(" ", 1)
             if me.startswith("-100"):
                 try:
                     me=int(me)
                 except:
-                    await k.edit("شناسه گپ نامعتبر داده شده است")
+                    await k.edit("◂ شناسه گپ ارسالی نامعتبر است.")
                     await delete_messages([m, k])
                     return
                 try:
@@ -355,7 +355,7 @@ async def channel_play_list(client, m: Message):
                     await k.edit(f"مشکلی پیش آمد- {e}")
                     await delete_messages([m, k])
                     return
-                await k.edit("جستجوی فایل‌ها از کانال، بسته به تعداد فایل‌های موجود در کانال، ممکن است مدتی طول بکشد.")
+                await k.edit("◂درحال جستجوی فایل‌ها از کانال ارسالی... ، بسته به تعداد فایل‌های موجود در کانال، ممکن است مدتی طول بکشد.")
                 st, msg = await c_play(me)
                 if st == False:
                     await m.edit(msg)
@@ -370,13 +370,13 @@ async def channel_play_list(client, m: Message):
                     await k.edit(f"Errors occured while getting data about channel - {e}")
                     await delete_messages([m, k])
                     return
-                await k.edit("Searching files from channel, this may take some time, depending on number of files in the channel.")
+                await k.edit("◂درحال جستجوی فایل‌ها از کانال ارسالی... ، بسته به تعداد فایل‌های موجود در کانال، ممکن است مدتی طول بکشد.")
                 st, msg=await c_play(me)
                 if st == False:
                     await k.edit(msg)
                     await delete_messages([m, k])
                 else:
-                    await k.edit(f"Succesfully Added {msg} files from {chat.title} to playlist")
+                    await k.edit(f"◂ فایل‌های {msg} از {chat.title} با موفقیت به لیست پخش اضافه شد.")
                     await delete_messages([m, k])
             else:
                 await k.edit("• هیچ کانالی جهت پخش ارائه نشده است. لطفا  شناسه یا نام کاربری کانال همانند مثال زیر ارسال نمایید تا فایل های آن کانال را پخش کنم.\n\n• مثال: \n/cplay @DigiGram24Files or /cplay -1001349494880\n\n◂ برای کانال خصوصی، هم ربات و هم اکانت USER باید عضو کانال باشند.")
