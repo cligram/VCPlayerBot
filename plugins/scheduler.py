@@ -265,7 +265,7 @@ async def list_schedule(bot, message):
         date = sch['date']
         f+=1
         date_=((pytz.utc.localize(date, is_dst=None).astimezone(IST)).replace(tzinfo=None)).strftime("%b %d %Y, %I:%M %p")
-        text+=f"شناسه زمانبندی : <code>{sch['job_id']}</code>\nزمان پخش برنامه: : <code>{date_}</code>\n\n✦"
+        text+=f"شناسه زمانبندی : <code>{sch['job_id']}</code>\nزمان پخش برنامه: : <code>{date_}</code>\n✦"
 
     await k.edit(text, disable_web_page_preview=True)
     await delete_messages([message])
