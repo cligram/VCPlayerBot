@@ -280,17 +280,17 @@ async def delete_sch(bot, message):
         else:
             buttons = [
                 [
-                    InlineKeyboardButton('Cancel All Schedules', callback_data='schcancel'),
-                    InlineKeyboardButton('No', callback_data='schclose'),
+                    InlineKeyboardButton('لغو کردن همه', callback_data='schcancel'),
+                    InlineKeyboardButton('خیر', callback_data='schclose'),
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
-            await m.edit("No Schedule ID  specified!! Do you want to Cancel all scheduled streams? or you can find schedul id using /slist command.", reply_markup=reply_markup)
+            await m.edit("هیچ شناسه زمان بندی شده ای مشخص نشده است!! آیا می خواهید همه پخش های زمانبندی شده را لغو کنید؟\nشما می توانید با استفاده از دستور /slist شناسه زمانبندی شده، را پیدا کنید.", reply_markup=reply_markup)
             await delete_messages([message])
             return
         data=Config.SCHEDULED_STREAM.get(job_id)
         if not data:
-            await m.edit("You gave me an invalid schedule ID, check again and send.")
+            await m.edit("◂ شما یک شناسه زمانبندی نا معتبر، ارسال کرده اید، دوباره بررسی و شناسه صحیح را ارسال کنید.")
             await delete_messages([message, m])
             return
         del Config.SCHEDULED_STREAM[job_id]
