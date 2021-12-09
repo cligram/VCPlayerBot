@@ -323,7 +323,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 Config.SCHEDULE_LIST.append({"job_id":job_id, "date":utc_dt})
                 Config.SCHEDULE_LIST = sorted(Config.SCHEDULE_LIST, key=lambda k: k['date'])
                 await schedule_a_play(job_id, utc_dt)
-                await query.message.edit(f"Succesfully scheduled to stream on <code> {date.strftime('%b %d %Y, %I:%M %p')} </code>")
+                await query.message.edit(f"◂ پخش زنده با موفقیت تنظیم شد به : <code> {date.strftime('%b %d %Y, %I:%M %p')} </code>")
                 await delete_messages([query.message, query.message.reply_to_message])
                 
             elif query.data == 'schcancelall':
