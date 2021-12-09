@@ -194,7 +194,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         else:
                             button.append([InlineKeyboardButton(text=f"{str(month)}  {str(year_)}",callback_data=f"sch_showdate_{year_}_{k}")])
                     button = button + button_
-                    button.append([InlineKeyboardButton("Close", callback_data="schclose")])
+                    button.append([InlineKeyboardButton("خروج", callback_data="schclose")])
                     await query.message.edit("اکنون ماه را برای  زمانبندی چت صوتی انتخاب کنیدㅤ ㅤㅤ", reply_markup=InlineKeyboardMarkup(button))
                 elif day == "none":
                     return
@@ -222,7 +222,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         pyear=year-1
                     else:
                         pyear=year
-                    button.append([InlineKeyboardButton("Back", callback_data=f"sch_showdate_{pyear}_{month}"), InlineKeyboardButton("Close", callback_data="schclose")])
+                    button.append([InlineKeyboardButton("برگشت", callback_data=f"sch_showdate_{pyear}_{month}"), InlineKeyboardButton("خروج", callback_data="schclose")])
                     await query.message.edit(f"◂ساعت پخش در {date} {month} {year}  برای برنامه‌ریزی چت صوتی انتخاب کنید.", reply_markup=InlineKeyboardMarkup(button))
 
             elif data.startswith("sch_day"):
@@ -247,7 +247,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     for d in chunk:
                         k.append(InlineKeyboardButton(text=f"{d}",callback_data=f"sch_minute_{year}_{month}_{day}_{hour}_{d}"))
                     button.append(k)
-                button.append([InlineKeyboardButton("Back", callback_data=f"sch_month_{year}_{month}_{day}"), InlineKeyboardButton("Close", callback_data="schclose")])
+                button.append([InlineKeyboardButton("برگشت", callback_data=f"sch_month_{year}_{month}_{day}"), InlineKeyboardButton("خروج", callback_data="schclose")])
                 await query.message.edit(f"◂ ساعت {hour} و چند دقیقه در {day} {month} {year}  چت صوتی پخش شود؟ لطفا از گزینه های زیر مقدار  دقیقه را انتخاب کنید.", reply_markup=InlineKeyboardMarkup(button))
 
             elif data.startswith("sch_minute"):
