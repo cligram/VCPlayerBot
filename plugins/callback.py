@@ -82,25 +82,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer()
                 return
             if you == "video":
-                text="Toggle your bot to Video / Audio Player."
+                text="• ربات خود را به پخش کننده ویدیو / صوتی تغییر دهید."
             elif you == "shuffle":
-                text="Enable or disable auto playlist shuffling"
+                text="• پخش خودکار لیست پخش را فعال یا غیرفعال کنید."
             elif you == "admin":
-                text="Enable to restrict the play command only for admins."
+                text="• برای محدود کردن دستور، پخش فقط برای مدیران فعال شود یا خیر."
             elif you == "mode":
-                text="Enabling Non- stop playback will make the player running 24 / 7 and automatic startup when restarting. "
+                text="• فعال کردن پخش بدون توقف باعث می‌شود پخش‌کننده به‌صورت 24 ساعته کار کند و هنگام راه‌اندازی مجدد، به‌طور خودکار راه‌اندازی شود."
             elif you == "title":
-                text="Enable to edit the VideoChat title to Current playing song's title."
+                text=" فعال کردن ویرایش عنوان چت ویدیویی و عنوان آهنگ پخش فعلی "
             elif you == "reply":
-                text="Choose whether to auto-reply messaged for userbot. "
+                text="• تنظیم حالت ، آیا پیام پاسخ خودکار برای حساب ربات وجود داشته باشد یا خیر."
             elif you == "videorecord":
-                text = "Enable to record both video and audio, if disabled only audio will be recorded."
+                text = "• ضبط ویدیو و صدا را فعال کنید، اگر غیرفعال باشد فقط صدا ضبط می شود."
             elif you == "videodimension":
-                text = "Choose the recording video's dimensions"
+                text = "• ابعاد فیلم ضبط شده را انتخاب کنید."
             elif you == "rectitle":
-                text = "A custom title for your chat recordings, Use /rtitle command to set a title"
+                text = "• یک عنوان سفارشی برای ضبط‌ چت، از دستور /rtitle برای تنظیم عنوان استفاده کنید."
             elif you == "recdumb":
-                text = "A channel to which all the recordings are forwarded. Make sure The User account is admin over there. Set one using /env or /config."
+                text = "•کانالی که تمام موارد ضبط شده به آن ارسال می شود. مطمئن شوید که حساب کاربری در آنجا مدیر است. با استفاده از /env یا /config تنظیم کنید"
             await query.answer(text=text, show_alert=True)
             return
 
