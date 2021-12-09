@@ -222,7 +222,7 @@ async def schedule_vc(bot, message):
         m=obj.monthdayscalendar(year, month)
         button=[]
         button.append([InlineKeyboardButton(text=f"{str(smonth)}  {str(year)}",callback_data=f"sch_month_choose_none_none")])
-        days=["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        days=["دوشنبه", "سه شنبه", "چهارشنبه", "پنچ شنبه", "جمعه", "شنبه", "یکشنبه"]
         f=[]
         for day in days:
             f.append(InlineKeyboardButton(text=f"{day}",callback_data=f"day_info_none"))
@@ -309,12 +309,12 @@ async def delete_sch(bot, message):
 async def delete_all_sch(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Cancel All Schedules', callback_data='schcancel'),
-            InlineKeyboardButton('No', callback_data='schclose'),
+            InlineKeyboardButton('لغو کردن همه', callback_data='schcancel'),
+            InlineKeyboardButton('خیر', callback_data='schclose'),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply("Do you want to cancel all the scheduled streams?ㅤㅤㅤㅤ ㅤ", reply_markup=reply_markup)
+    await message.reply("آیا می‌خواهید همه پخش‌های زمانبندی شده را لغو کنید؟ㅤㅤㅤㅤ ㅤ", reply_markup=reply_markup)
     await delete_messages([message])
 
 
