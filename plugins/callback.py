@@ -311,8 +311,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             k=d
                         f.append(InlineKeyboardButton(text=f"{k}",callback_data=f"sch_month_{year_}_{month}_{d}"))
                     button.append(f)
-                button.append([InlineKeyboardButton("Close", callback_data="schclose")])
-                await query.message.edit(f"Choose the day of the month you want to schedule the voicechat.\nToday is {thisday} {smonth} {tyear}. Chooosing a date preceeding today will be considered as next year {year+1}", reply_markup=InlineKeyboardMarkup(button))
+                button.append([InlineKeyboardButton("خروج", callback_data="schclose")])
+                await query.message.edit(f"◂ روزی را که می‌خواهید چت صوتی را برنامه‌ ریزی کنید، انتخاب کنید.\nامروز {thisday} {smonth} {year} است. انتخاب تاریخ قبل از امروز به عنوان سال آینده در نظر گرفته می شود {year+1}", reply_markup=InlineKeyboardMarkup(button))
 
             elif data.startswith("schconfirm"):
                 none, date = data.split("_")
