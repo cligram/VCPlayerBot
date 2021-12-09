@@ -725,7 +725,7 @@ async def set_up_startup():
         LOGGER.info(f"Channel Play enabled from {Config.STREAM_URL}")
         Config.STREAM_SETUP=True
         return
-    elif Config.STREAM_URL.startswith("https://t.me/DumpPlaylist"):
+    elif Config.STREAM_URL.startswith("https://t.me/Playlist"):
         Config.YPLAY=True
         LOGGER.info("YouTube Playlist is set as STARTUP STREAM")
         Config.STREAM_SETUP=True
@@ -1566,8 +1566,8 @@ async def recorder_settings():
             InlineKeyboardButton(f"{Config.RECORDING_TITLE if Config.RECORDING_TITLE else 'پیشفرض'}", callback_data='info_rectitle'),
         ],
         [
-            InlineKeyboardButton(f"Recording Dump Channel", callback_data='info_recdumb'),
-            InlineKeyboardButton(f"{Config.RECORDING_DUMP if Config.RECORDING_DUMP else 'Not Dumping'}", callback_data='info_recdumb'),
+            InlineKeyboardButton(f"کانال تخلیه فایل های ضبط شده", callback_data='info_recdumb'),
+            InlineKeyboardButton(f"{Config.RECORDING_DUMP if Config.RECORDING_DUMP else 'تنظیم نشده'}", callback_data='info_recdumb'),
         ],
         [
             InlineKeyboardButton('🗑 خروج', callback_data='close'),
