@@ -248,7 +248,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         k.append(InlineKeyboardButton(text=f"{d}",callback_data=f"sch_minute_{year}_{month}_{day}_{hour}_{d}"))
                     button.append(k)
                 button.append([InlineKeyboardButton("Back", callback_data=f"sch_month_{year}_{month}_{day}"), InlineKeyboardButton("Close", callback_data="schclose")])
-                await query.message.edit(f"مقدار دقیقه ی،  ساعت {hour} را، در {day} {month} {year} برای برنامه‌ریزی چت صوتی، را انتخاب کنید.", reply_markup=InlineKeyboardMarkup(button))
+                await query.message.edit(f"◂ ساعت {hour} و چند دقیقه در {day} {month} {year}  چت صوتی پخش شود؟ لطفا از گزینه های زیر مقدار  دقیقه را انتخاب کنید.", reply_markup=InlineKeyboardMarkup(button))
 
             elif data.startswith("sch_minute"):
                 none, none, year, month, day, hour, minute = data.split("_")
