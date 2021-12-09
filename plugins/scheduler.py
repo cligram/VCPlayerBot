@@ -253,19 +253,19 @@ async def list_schedule(bot, message):
         await k.edit("Nothing scheduled to play.")
         await delete_messages([k, message])
         return
-    text="Current Schedules:\n\n"
+    text="زمانبندی های فعلی:\n\n"
     s=Config.SCHEDULE_LIST
     f=1
     for sch in s:
         details=Config.SCHEDULED_STREAM.get(sch['job_id'])
         if not details['3']=="telegram":
-            text+=f"<b>{f}.</b> Title: [{details['1']}]({details['2']}) By {details['4']}\n"
+            text+=f"<b>{f}.</b> عنوان: [{details['1']}]({details['2']}) توسط {details['4']}\n"
         else:
-            text+=f"<b>{f}.</b> Title: {details['1']} By {details['4']}\n"
+            text+=f"<b>{f}.</b> عنوان: {details['1']} توسط {details['4']}\n"
         date = sch['date']
         f+=1
         date_=((pytz.utc.localize(date, is_dst=None).astimezone(IST)).replace(tzinfo=None)).strftime("%b %d %Y, %I:%M %p")
-        text+=f"Shedule ID : <code>{sch['job_id']}</code>\nSchedule Date : <code>{date_}</code>\n\n"
+        text+=f"شناسه زمانبندی : <code>{sch['job_id']}</code>\nزمان پخش برنامه: : <code>{date_}</code>\n\n"
 
     await k.edit(text, disable_web_page_preview=True)
     await delete_messages([message])
