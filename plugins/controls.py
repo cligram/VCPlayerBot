@@ -226,13 +226,13 @@ async def replay_playout(client, m: Message):
     msg = await m.reply('Checking player')
     if not Config.CALL_STATUS:
         await msg.edit(
-            "Player is idle, start the player using below button. ㅤㅤㅤㅤㅤ",
+            "◂ پخش کننده بیکار است، پخش کننده را با استفاده از دکمه زیر شروع کنید. ㅤㅤㅤㅤㅤ",
             disable_web_page_preview=True,
             reply_markup=await get_buttons()
         )
         await delete_messages([m])
         return
-    await msg.edit(f"Replaying from begining")
+    await msg.edit(f"پخش مجدد از ابتدا")
     await restart_playout()
     await delete_messages([m, msg])
 
@@ -241,7 +241,7 @@ async def replay_playout(client, m: Message):
 async def show_player(client, m: Message):
     if not Config.CALL_STATUS:
         await m.reply_text(
-            "Player is idle, start the player using below button. ㅤㅤㅤㅤㅤ",
+            "◂ پخش کننده بیکار است، پخش کننده را با استفاده از دکمه زیر شروع کنید. ㅤㅤㅤㅤㅤ",
             disable_web_page_preview=True,
             reply_markup=await get_buttons()
         )
@@ -289,7 +289,7 @@ async def seek_playout(client, m: Message):
     k=await m.reply("Trying to seek..")
     if not data.get('dur', 0) or \
         data.get('dur') == 0:
-        await k.edit("This stream cant be seeked.")
+        await k.edit("◂ این پخش زنده را نمیتوان جلو برد.")
         await delete_messages([m, k])
         return
     if ' ' in m.text:
@@ -297,7 +297,7 @@ async def seek_playout(client, m: Message):
         try:
             time=int(time)
         except:
-            await k.edit('Invalid time specified')
+            await k.edit('◂ زمان نامعتبر است.')
             await delete_messages([m, k])
             return
         nyav, string=await seek_file(time)
@@ -320,7 +320,7 @@ async def seek_playout(client, m: Message):
         Config.msg['player'] = await k.edit(f"🎸{title}", reply_markup=await get_buttons(), disable_web_page_preview=True)
         await delete_messages([m])
     else:
-        await k.edit('No time specified')
+        await k.edit('◂زمان مشخصی ندارد.')
         await delete_messages([m, k])
 
 
