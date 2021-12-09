@@ -78,7 +78,7 @@ async def start(client, message):
                     ],
                 ]
                 )
-            await message.reply("آموزش استفاده از ربات پخش موزیک، نمایش منوی راهنما، یکی از گزینه های زیر را انتخاب کنید.",
+            await message.reply("◂ بخش مورد نظر را انتخاب نمایید :\n─┅━ صفحه راهنما ━┅─",
                 reply_markup=reply_markup,
                 disable_web_page_preview=True
                 )
@@ -122,7 +122,7 @@ async def start(client, message):
                     f.append(InlineKeyboardButton(text=f"{k}",callback_data=f"sch_month_{year_}_{month}_{d}"))
                 button.append(f)
             button.append([InlineKeyboardButton("Close", callback_data="schclose")])
-            await msg.edit(f"Choose the day of the month you want to schedule the voicechat.\nToday is {thisday} {smonth} {year}. Chooosing a date preceeding today will be considered as next year {year+1}", reply_markup=InlineKeyboardMarkup(button))
+            await msg.edit(f"◂ روزی را که می‌خواهید چت صوتی را برنامه‌ ریزی کنید، انتخاب کنید.\nامروز {thisday} {smonth} {year} است. انتخاب تاریخ قبل از امروز به عنوان سال آینده در نظر گرفته می شود {year+1}", reply_markup=InlineKeyboardMarkup(button))
 
 
 
@@ -166,7 +166,7 @@ async def show_help(client, message):
         )
     if message.chat.type != "private" and message.from_user is None:
         k=await message.reply(
-            text="I cant help you here, since you are an anonymous admin. Get help in PM",
+            text="من نمی توانم در اینجا به شما کمک کنم، زیرا شما یک مدیر ناشناس هستید.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -179,7 +179,7 @@ async def show_help(client, message):
     if Config.msg.get('help') is not None:
         await Config.msg['help'].delete()
     Config.msg['help'] = await message.reply_text(
-        "آموزش استفاده از ربات پخش موزیک، نمایش منوی راهنما، یکی از گزینه های زیر را انتخاب کنید.",
+        "◂ بخش مورد نظر را انتخاب نمایید :\n─┅━ صفحه راهنما ━┅─",
         reply_markup=reply_markup,
         disable_web_page_preview=True
         )
@@ -192,8 +192,8 @@ async def repo_(client, message):
             InlineKeyboardButton('⚙️ کانال ربات', url='https://t.me/DigiGram24'),     
         ],
         [
-            InlineKeyboardButton("🎞 How to Deploy", url='https://youtu.be/mnWgZMrNe_0'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton("🎞 نحوه فعالسازی ربات", url='https://t.me/DIGRM'),
+            InlineKeyboardButton('🗑 خروج', callback_data='close'),
         ]
     ]
     await message.reply("<b>برای اطلاع  بیشتر و نصب ربات پخش کننده موزیک و ویدیو در گروهتان با آیدی سازنده ربات در ارتباط باشید. <a href=https://t.me/DIGRM>DigiGram24.</a>\n هم ویدیو هم موزیک قابل پخش است.\n\nبدون محدویت حجم فایل 🙃.</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -258,7 +258,7 @@ async def set_heroku_var(client, message):
                     await delete_messages([message])
                     return
                 else:
-                    await m.edit("This is an invalid env value. Read help on env to know about available env vars.")
+                    await m.edit("ورودی ارسالی نامعتبر است. از سازنده ربات (@DIGRM) درخواست کمک نمایید.")
                     await delete_messages([message, m])
                     return     
             
@@ -268,7 +268,7 @@ async def set_heroku_var(client, message):
             return
 
         if Config.DATABASE_URI and var in ["STARTUP_STREAM", "CHAT", "LOG_GROUP", "REPLY_MESSAGE", "DELAY", "RECORDING_DUMP", "QUALITY"]:      
-            await m.edit("Mongo DB Found, Setting up config vars...")
+            await m.edit("Mgo DB Found, Setting up config vars...")
             await asyncio.sleep(2)  
             if not value:
                 await m.edit(f"No value for env specified. Trying to delete env {var}.")
@@ -300,7 +300,7 @@ async def set_heroku_var(client, message):
                                 elif value == "low":
                                     value = 50
                         else:
-                            await m.edit("You should give me a chat id . It should be an interger.")
+                            await m.edit("◂ شما باید یک آیدی گروه را وارد کنید. آیدی عددی باید یک عدد صحیح باشد.")
                             await delete_messages([message, m])
                             return
                     if var == "CHAT":
