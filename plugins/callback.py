@@ -265,11 +265,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 final=f"{day}th {smonth} {year} at {hour}:{minute}"
                 button=[
                     [
-                        InlineKeyboardButton("Confirm", callback_data=f"schconfirm_{year}-{month}-{day} {hour}:{minute}"),
-                        InlineKeyboardButton("Back", callback_data=f"sch_day_{year}_{month}_{day}_{hour}")
+                        InlineKeyboardButton("تأیید", callback_data=f"schconfirm_{year}-{month}-{day} {hour}:{minute}"),
+                        InlineKeyboardButton("برگشت", callback_data=f"sch_day_{year}_{month}_{day}_{hour}")
                     ],
                     [
-                        InlineKeyboardButton("Close", callback_data="schclose")
+                        InlineKeyboardButton("خروج", callback_data="schclose")
                     ]
                 ]
                 data=Config.SCHEDULED_STREAM.get(f"{query.message.chat.id}_{query.message.message_id}")
@@ -279,7 +279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title=data['1']
                 else:
                     title=f"[{data['1']}]({data['2']})"
-                await query.message.edit(f"Your Stream {title} is now scheduled to start on {final}\n\nClick Confirm to confirm the time.", reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True)                
+                await query.message.edit(f"◂پخش زنده زمانبندی شده  **{title} **شما، اکنون برای شروع در  **{final} ** برنامه ریزی شده است\n\nبرای تأیید زمان، روی تأیید کلیک کنید.", reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True)                
 
             elif data.startswith("sch_showdate"):
                 tyear=year
