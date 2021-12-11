@@ -1534,7 +1534,7 @@ async def settings_panel():
                 InlineKeyboardButton(f"{'✅ فعال' if Config.SHUFFLE else '🚫 غیرفعال'}", callback_data='set_shuffle'),
             ],
             [
-                InlineKeyboardButton("👮 پاسخ خودکار (مجوز PM)", callback_data=f"info_reply"),
+                InlineKeyboardButton("", callback_data=f"info_reply"),
                 InlineKeyboardButton(f"{'✅ فعال' if Config.REPLY_PM else '🚫 غیرفعال'}", callback_data='reply_msg'),
             ],
             [
