@@ -43,8 +43,8 @@ async def add_admin(client, message):
             try:
                 user=await client.get_users(user)
             except Exception as e:
-                k=await message.reply(f"I was unable to locate that user.\nError: {e}")
-                LOGGER.error(f"Unable to find the user - {e}", exc_info=True)
+                k=await message.reply(f"◂ من نتوانستم آن کاربر را پیدا کنم.\nError: {e}")
+                LOGGER.error(f"◂ شناسایی کاربر ممکن نیست - {e}", exc_info=True)
                 await delete_messages([message, k])
                 return
             user_id=user.id
@@ -86,8 +86,8 @@ async def remove_admin(client, message):
             try:
                 user=await client.get_users(user)
             except Exception as e:
-                k = await message.reply(f"I was unable to locate that user.\nError: {e}")
-                LOGGER.error(f"Unable to Locate user, {e}", exc_info=True)
+                k = await message.reply(f"◂ من نتوانستم آن کاربر را پیدا کنم.\nError: {e}")
+                LOGGER.error(f"◂ شناسایی کاربر ممکن نیست, {e}", exc_info=True)
                 await delete_messages([message, k])
                 return
             user_id=user.id
@@ -108,7 +108,7 @@ async def remove_admin(client, message):
         await delete_messages([message, k])
         return
     Config.ADMINS.remove(user_id)
-    k = await message.reply(f"با موفقیت تنزل یافت {user.mention}")
+    k = await message.reply(f"◂ مقام  {user.mention} با موفقیت تنزل یافت.")
     await sync_to_db()
     await delete_messages([message, k])
 
