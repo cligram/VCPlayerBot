@@ -274,7 +274,7 @@ async def list_schedule(bot, message):
 @Client.on_message(filters.command(["cancel", f"cancel@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def delete_sch(bot, message):
     with suppress(MessageIdInvalid, MessageNotModified):
-        m = await message.reply("Finding the scheduled stream..")
+        m = await message.reply("◂درحال یافتن پخش های برنامه ریزی شده...")
         if " " in message.text:
             cmd, job_id = message.text.split(" ", 1)
         else:
@@ -302,7 +302,7 @@ async def delete_sch(bot, message):
             for old_ in old:
                 Config.SCHEDULE_LIST.remove(old_)
         await sync_to_db()
-        await m.edit(f"Succesfully deleted {data['1']} from scheduled list.")
+        await m.edit(f"◂برنامه {data['1']} با موفقیت از لیست برنامه‌ریزی‌ شده حذف شد.")
         await delete_messages([message, m])
         
 @Client.on_message(filters.command(["cancelall", f"cancelall@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
