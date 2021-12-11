@@ -63,18 +63,18 @@ async def start(client, message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(f"پخش", callback_data='help_play'),
-                        InlineKeyboardButton(f"تنظیمات", callback_data=f"help_settings"),
-                        InlineKeyboardButton(f"ضبط", callback_data='help_record'),
+                        InlineKeyboardButton(f"• پخش", callback_data='help_play'),
+                        InlineKeyboardButton(f"• تنظیمات", callback_data=f"help_settings"),
+                        InlineKeyboardButton(f"• ضبط", callback_data='help_record'),
                     ],
                     [
-                        InlineKeyboardButton("زمان بندی", callback_data="help_schedule"),
-                        InlineKeyboardButton("کنترل", callback_data='help_control'),
-                        InlineKeyboardButton("مدیریت", callback_data="help_admin"),
+                        InlineKeyboardButton("• زمان بندی", callback_data="help_schedule"),
+                        InlineKeyboardButton("• کنترل", callback_data='help_control'),
+                        InlineKeyboardButton("• مدیریت", callback_data="help_admin"),
                     ],
                     [
-                        InlineKeyboardButton(f"تنظیمات بیشتر", callback_data='help_misc'),
-                        InlineKeyboardButton("خروج", callback_data="close"),
+                        InlineKeyboardButton(f"• تنظیمات بیشتر", callback_data='help_misc'),
+                        InlineKeyboardButton("• تایید و خروج", callback_data="close"),
                     ],
                 ]
                 )
@@ -148,19 +148,19 @@ async def show_help(client, message):
     reply_markup=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("پخش", callback_data='help_play'),
-                InlineKeyboardButton("تنظیمات", callback_data=f"help_settings"),
-                InlineKeyboardButton("ضبط", callback_data='help_record'),
+                InlineKeyboardButton("• پخش", callback_data='help_play'),
+                InlineKeyboardButton("• تنظیمات", callback_data=f"help_settings"),
+                InlineKeyboardButton("• ضبط", callback_data='help_record'),
             ],
             [
-                InlineKeyboardButton("زمان بندی", callback_data="help_schedule"),
-                InlineKeyboardButton("کنترل", callback_data='help_control'),
-                InlineKeyboardButton("مدیریت", callback_data="help_admin"),
+                InlineKeyboardButton("• زمان بندی", callback_data="help_schedule"),
+                InlineKeyboardButton("• کنترل", callback_data='help_control'),
+                InlineKeyboardButton("• مدیریت", callback_data="help_admin"),
             ],
             [
-                InlineKeyboardButton("تنظیمات بیشتر", callback_data='help_misc'),
-                InlineKeyboardButton("پیکربندی", callback_data='help_env'),
-                InlineKeyboardButton("خروج", callback_data="close"),
+                InlineKeyboardButton("• تنظیمات بیشتر", callback_data='help_misc'),
+                InlineKeyboardButton("• پیکربندی", callback_data='help_env'),
+                InlineKeyboardButton("• تایید و خروج", callback_data="close"),
             ],
         ]
         )
