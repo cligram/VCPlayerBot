@@ -333,11 +333,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             elif query.data == "schcancel":
                 buttons = [
                     [
-                        InlineKeyboardButton('Yes, Iam Sure!!', callback_data='schcancelall'),
-                        InlineKeyboardButton('No', callback_data='schclose'),
+                        InlineKeyboardButton('بله مطمئن هستم!!', callback_data='schcancelall'),
+                        InlineKeyboardButton('خیر', callback_data='schclose'),
                     ]
                 ]
-                await query.message.edit("Are you sure that you want to cancel all the scheduled streams?", reply_markup=InlineKeyboardMarkup(buttons))
+                await query.message.edit("آیا مطمئن هستید که می‌خواهید همه پخش‌های برنامه‌ریزی‌شده را لغو کنید؟", reply_markup=InlineKeyboardMarkup(buttons))
             elif data == "schclose":
                 await query.answer("• منوی رُبات با موفقیت بسته شد !")
                 await query.message.delete()
