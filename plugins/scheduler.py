@@ -250,7 +250,7 @@ async def schedule_vc(bot, message):
 async def list_schedule(bot, message):
     k=await message.reply("Checking schedules...")
     if not Config.SCHEDULE_LIST:
-        await k.edit("Nothing scheduled to play.")
+        await k.edit("◂ برنامه پخش زمان بندی شده ای وجود ندارد.")
         await delete_messages([k, message])
         return
     text="زمانبندی های فعلی:\n\n"
