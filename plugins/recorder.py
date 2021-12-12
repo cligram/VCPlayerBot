@@ -42,7 +42,7 @@ async def record_vc(bot, message):
 
 @Client.on_message(filters.command(["rtitle", f"rtitle@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def recording_title(bot, message):
-    m=await message.reply("Checking..")
+    m=await message.reply("•  درحال بررسی ...")
     if " " in message.text:
         cmd, title = message.text.split(" ", 1)
     else:
