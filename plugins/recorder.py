@@ -46,7 +46,7 @@ async def recording_title(bot, message):
     if " " in message.text:
         cmd, title = message.text.split(" ", 1)
     else:
-        await m.edit("• یک عنوان جدید ارسال نمایید. برای تنظیم از الگوی زیر\n/rtitle < عنوان سفارشی >n/استفاده کنید.\n◂برای برگشت به حالت پیشفرض از False استفاده کنید.")
+        await m.edit("•  عنوان جدید از الگوی زیر استفاده نمایید.\n<code>/rtitle عنوان سفارشی</code>\n◂برای برگشت به حالت پیشفرض از عبارت False بعد از توشتن  دستور استفاده کنید.")
         await delete_messages([message, m])
         return
 
