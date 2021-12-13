@@ -258,7 +258,7 @@ async def handler(client: PyTgCalls, update: Update):
                     await leave_call()
             else:
                 await skip()          
-            await sleep(15) #wait for max 15 sec
+            await sleep(500) #wait for max 15 sec
             try:
                 del Config.STREAM_END["STATUS"]
             except:
