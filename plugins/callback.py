@@ -77,7 +77,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 return
             if you == "player":
                 if not Config.CALL_STATUS:
-                    return await query.answer("Not Playing anything.", show_alert=True)
+                    return await query.answer("◂ هیچ رسانه ای پخش نمی شود.", show_alert=True)
                 await query.message.edit_reply_markup(reply_markup=await get_buttons())
                 await query.answer()
                 return
@@ -160,7 +160,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
         if not query.from_user.id in admins:
             await query.answer(
-                "😒 Played Joji.mp3",
+                "◂ دست نزن😉😒",
                 show_alert=True
                 )
             return
