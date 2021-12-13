@@ -314,7 +314,7 @@ async def clear_play_list(client, m: Message):
         await delete_messages([m, k])
         return
     Config.playlist.clear()
-    k=await m.reply_text(f"Playlist Cleared.")
+    k=await m.reply_text(f"◂ لیست پخش پاک شد.")
     await clear_db_playlist(all=True)
     if Config.IS_LOOP \
         and not (Config.YPLAY or Config.CPLAY):
