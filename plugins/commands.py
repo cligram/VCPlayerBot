@@ -232,13 +232,13 @@ async def get_logs(client, message):
         await m.delete()
         await delete_messages([message])
     else:
-        k = await m.edit("No log files found.")
+        k = await m.edit("◂ هیچ فایل گزارشی یافت نشد.")
         await delete_messages([message, k])
 
 @Client.on_message(filters.command(['env', f"env@{Config.BOT_USERNAME}", "config", f"config@{Config.BOT_USERNAME}"]) & sudo_filter & chat_filter)
 async def set_heroku_var(client, message):
     with suppress(MessageIdInvalid, MessageNotModified):
-        m = await message.reply("Checking config vars..")
+        m = await message.reply("◂ در حال بررسی تنظیمات پیکربندی...")
         if " " in message.text:
             cmd, env = message.text.split(" ", 1)
             if "=" in env:
@@ -268,13 +268,13 @@ async def set_heroku_var(client, message):
             return
 
         if Config.DATABASE_URI and var in ["STARTUP_STREAM", "CHAT", "LOG_GROUP", "REPLY_MESSAGE", "DELAY", "RECORDING_DUMP", "QUALITY"]:      
-            await m.edit("Mgo DB Found, Setting up config vars...")
+            await m.edit("◂ دیتابیس یافت شد. درحال انجام تنظیمات پیکربندی ربات...")
             await asyncio.sleep(2)  
             if not value:
-                await m.edit(f"No value for env specified. Trying to delete env {var}.")
+                await m.edit(f"◂ هیچ مقداری برای پیکربندی مشخص نشده است. در حال تلاش برای حذف پیکربندی {var}.")
                 await asyncio.sleep(2)
                 if var in ["STARTUP_STREAM", "CHAT", "DELAY"]:
-                    await m.edit("This is a mandatory var and cannot be deleted.")
+                    await m.edit("◂این یک نسخه اجباری است و نمی توان آن را حذف کرد.")
                     await delete_messages([message, m]) 
                     return
                 await edit_config(var, False)
@@ -288,7 +288,7 @@ async def set_heroku_var(client, message):
                     except:
                         if var == "QUALITY":
                             if not value.lower() in ["low", "medium", "high"]:
-                                await m.edit("You should specify a value between 10 - 100.")
+                                await m.edit("◂ شما باید مقداری بین 10 - 100 مشخص کنید.")
                                 await delete_messages([message, m])
                                 return
                             else:
@@ -322,14 +322,14 @@ async def set_heroku_var(client, message):
                             k, reply = await seek_file(0)
                             if k == False:
                                 await restart_playout()
-                    await m.edit(f"Succesfully changed {var} to {value}")
+                    await m.edit(f"◂ با موفقیت تغییر کرد {var} به {value}")
                     await delete_messages([message, m])
                     return
                 else:
                     if var == "STARTUP_STREAM":
                         Config.STREAM_SETUP=False
                     await edit_config(var, value)
-                    await m.edit(f"Succesfully changed {var} to {value}")
+                    await m.edit(f"◂ با موفقیت تغییر کرد {var} به {value}")
                     await delete_messages([message, m])
                     await restart_playout()
                     return
@@ -337,22 +337,22 @@ async def set_heroku_var(client, message):
             if not Config.HEROKU_APP:
                 buttons = [[InlineKeyboardButton('Heroku API_KEY', url='https://dashboard.heroku.com/account/applications/authorizations/new'), InlineKeyboardButton('🗑 Close', callback_data='close'),]]
                 await m.edit(
-                    text="No DIGI app found, this command needs the following heroku vars to be set.\n\n1. <code>HEROKU_API_KEY</code>: Your heroku account api key.\n2. <code>HEROKU_APP_NAME</code>: Your heroku app name.", 
+                    text="◂ هیچ برنامه DIGI یافت نشد، این دستور نیاز تنظیم از سرور دارد.", 
                     reply_markup=InlineKeyboardMarkup(buttons)) 
                 await delete_messages([message])
                 return     
             config = Config.HEROKU_APP.config()
             if not value:
-                await m.edit(f"No value for env specified. Trying to delete env {var}.")
+                await m.edit(f"هیچ مقداری برای پیکربندی مشخص نشده است. تلاش برای حذف پیکربندی {var}.")
                 await asyncio.sleep(2)
                 if var in ["STARTUP_STREAM", "CHAT", "DELAY", "API_ID", "API_HASH", "BOT_TOKEN", "SESSION_STRING", "ADMINS"]:
-                    await m.edit("These are mandatory vars and cannot be deleted.")
+                    await m.edit("◂ این ها متغیرهای اجباری هستند و نمی توان آنها را حذف کرد.")
                     await delete_messages([message, m])
                     return
                 if var in config:
-                    await m.edit(f"Sucessfully deleted {var}")
+                    await m.edit(f"◂ با موفقیت حذف شد {var}")
                     await asyncio.sleep(2)
-                    await m.edit("Now restarting the app to make changes.")
+                    await m.edit("◂ اکنون برنامه را مجدداً راه اندازی کنید تا تغییرات ایجاد شود.")
                     if Config.DATABASE_URI:
                         msg = {"msg_id":m.message_id, "chat_id":m.chat.id}
                         if not await db.is_saved("RESTART"):
@@ -366,9 +366,9 @@ async def set_heroku_var(client, message):
                     await delete_messages([message, k])
                 return
             if var in config:
-                await m.edit(f"Variable already found. Now edited to {value}")
+                await m.edit(f"متغیر قبلاً پیدا شده است. در حال حاضر ویرایش شده است به {value}")
             else:
-                await m.edit(f"Variable not found, Now setting as new var.")
+                await m.edit(f"◂متغیر یافت نشد، اکنون به عنوان پیکربندی جدید تنظیم می شود.")
             await asyncio.sleep(2)
             await m.edit(f"Succesfully set {var} with value {value}, Now Restarting to take effect of changes...")
             if Config.DATABASE_URI:
