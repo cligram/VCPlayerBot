@@ -114,9 +114,9 @@ async def service_msg(client, message):
         k=scheduler.get_job(str(Config.CHAT), jobstore=None) #scheduled records
         if k:
             await start_record_stream()
-            LOGGER.info("Resuming recording..")
+            LOGGER.info("◂ از سرگیری ضبط ...")
         elif Config.WAS_RECORDING:
-            LOGGER.info("Previous recording was ended unexpectedly, Now resuming recordings.")
+            LOGGER.info("◂ ضبط قبلی به طور غیر منتظره ای پایان یافت، اکنون ضبط از سر گرفته می شود.")
             await start_record_stream()#for unscheduled
         a = await client.send(
                 GetFullChannel(
@@ -129,16 +129,16 @@ async def service_msg(client, message):
                 )
         if a.full_chat.call is not None:
             Config.CURRENT_CALL=a.full_chat.call.id
-        LOGGER.info("Voice chat started.")
+        LOGGER.info("◂ چت صوتی شروع شد.")
         await sync_to_db()
     elif message.service == 'voice_chat_scheduled':
-        LOGGER.info("VoiceChat Scheduled")
+        LOGGER.info("◂ چت صوتی برنامه ریزی شد.")
         Config.IS_ACTIVE=False
         Config.HAS_SCHEDULE=True
         await sync_to_db()
     elif message.service == 'voice_chat_ended':
         Config.IS_ACTIVE=False
-        LOGGER.info("Voicechat ended")
+        LOGGER.info("◂ چت صوتی به پایان رسید.")
         Config.CURRENT_CALL=None
         if Config.IS_RECORDING:
             Config.WAS_RECORDING=True
@@ -175,11 +175,11 @@ async def handle_raw_updates(client: Client, update: Update, user: dict, chat: d
         if update.call is None:
             Config.IS_ACTIVE = False
             Config.CURRENT_CALL=None
-            LOGGER.warning("No Active Group Calls Found.")
+            LOGGER.warning("◂ هیچ تماس گروهی فعالی یافت نشد.")
             if Config.IS_RECORDING:
                 Config.WAS_RECORDING=True
                 await stop_recording()
-                LOGGER.warning("Group call was ended and hence stoping recording.")
+                LOGGER.warning("◂ تماس گروهی پایان یافت و در نتیجه ضبط متوقف شد.")
             Config.HAS_SCHEDULE = False
             await sync_to_db()
             return
@@ -192,7 +192,7 @@ async def handle_raw_updates(client: Client, update: Update, user: dict, chat: d
                 if Config.IS_RECORDING:
                     Config.WAS_RECORDING=True
                     await stop_recording()
-                LOGGER.warning("Group Call Was ended")
+                LOGGER.warning("◂ تماس گروهی پایان یافت.")
                 Config.CALL_STATUS = False
                 await sync_to_db()
                 return
@@ -201,7 +201,7 @@ async def handle_raw_updates(client: Client, update: Update, user: dict, chat: d
             if Config.IS_RECORDING and not call.record_video_active:
                 Config.LISTEN=True
                 await stop_recording()
-                LOGGER.warning("Recording was ended by user, hence stopping the schedules.")
+                LOGGER.warning("◂ ضبط توسط کاربر به پایان رسید، بنابراین برنامه‌ها متوقف شدند.")
                 return
             if call.schedule_date:
                 Config.HAS_SCHEDULE=True
@@ -258,7 +258,7 @@ async def handler(client: PyTgCalls, update: Update):
                     await leave_call()
             else:
                 await skip()          
-            await sleep(500) #wait for max 15 sec
+            await sleep(15) #wait for max 15 sec
             try:
                 del Config.STREAM_END["STATUS"]
             except:
