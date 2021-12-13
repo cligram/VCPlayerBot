@@ -263,7 +263,7 @@ async def set_heroku_var(client, message):
                     return     
             
         else:
-            await m.edit("You haven't provided any value for env, you should follow the correct format.\nExample: <code>/env CHAT=-1020202020202</code> to change or set CHAT var.\n<code>/env REPLY_MESSAGE= <code>To delete REPLY_MESSAGE.")
+            await m.edit("شما دسترسی لازم برای تغییر تنظیمات پیکربندی اصلی را ندارید.")
             await delete_messages([message, m])
             return
 
