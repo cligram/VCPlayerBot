@@ -1214,7 +1214,7 @@ async def y_play(playlist):
             Config.YSTREAM=True
             Config.YPLAY=False
             if Config.IS_LOOP:
-                Config.STREAM_URL="https://www.youtube.com/watch?v=zcrUCvBD16k"
+                Config.STREAM_URL="https://www.youtube.com/watch?v=gpZnHXSbOoE"
                 LOGGER.info("Starting Default Live, 24 News")
                 await start_stream()
             return False
@@ -1225,7 +1225,7 @@ async def y_play(playlist):
         Config.YSTREAM=True
         Config.YPLAY=False
         if Config.IS_LOOP:
-            Config.STREAM_URL="https://www.youtube.com/watch?v=zcrUCvBD16k"
+            Config.STREAM_URL="https://www.youtube.com/watch?v=gpZnHXSbOoE"
             LOGGER.info("Starting Default Live, 24 News")
             await start_stream()
         return False
@@ -1303,7 +1303,7 @@ async def c_play(channel):
             LOGGER.warning(f"No files found in {chat.title}, Change filter settings if required. Current filters are {Config.FILTERS}")
             if Config.CPLAY:
                 Config.CPLAY=False
-                Config.STREAM_URL="https://www.youtube.com/watch?v=zcrUCvBD16k"
+                Config.STREAM_URL="https://www.youtube.com/watch?v=gpZnHXSbOoE"
                 LOGGER.warning("Seems like cplay is set as STARTUP_STREAM, Since nothing found on {chat.title}, switching to 24 News as startup stream.")
                 Config.STREAM_SETUP=False
                 await sync_to_db()
@@ -1321,7 +1321,7 @@ async def c_play(channel):
         LOGGER.error(f"Errors occured while fetching songs from given channel - {e}", exc_info=True)
         if Config.CPLAY:
             Config.CPLAY=False
-            Config.STREAM_URL="https://www.youtube.com/watch?v=zcrUCvBD16k"
+            Config.STREAM_URL="https://www.youtube.com/watch?v=gpZnHXSbOoE"
             LOGGER.warning("Seems like cplay is set as STARTUP_STREAM, and errors occured while getting playlist from given chat. Switching to 24 news as default stream.")
             Config.STREAM_SETUP=False
         await sync_to_db()
