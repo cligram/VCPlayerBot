@@ -48,8 +48,8 @@ async def main():
             await check_changes()
             await sync_from_db()
         except Exception as e:
-            LOGGER.error(f"Errors occured while setting up database for DigiGram24, check the value of DATABASE_URI. Full error - {str(e)}", exc_info=True)
-            Config.STARTUP_ERROR="Errors occured while setting up database for DigiGram24, check the value of DATABASE_URI. Full error - {str(e)}"
+            LOGGER.error(f"Errors occured while setting up database for OnlineMusic24, check the value of DATABASE_URI. Full error - {str(e)}", exc_info=True)
+            Config.STARTUP_ERROR="Errors occured while setting up database for OnlineMusic24, check the value of DATABASE_URI. Full error - {str(e)}"
             LOGGER.info("Activating debug mode, you can reconfigure your bot with /env command.")
             await bot.stop()
             from utils import debug
