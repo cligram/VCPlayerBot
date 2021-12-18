@@ -445,10 +445,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == 'restart':
             if not Config.CALL_STATUS:
                 if not Config.playlist:
-                    await query.answer("Player is empty, starting STARTUP_STREAM.")
+                    await query.answer("پخش کننده خالی است، رسانه پیش فرض شروع به پخش می شود.")
                 else:
-                    await query.answer('Resuming the playlist')
-            await query.answer("Restrating the player")
+                    await query.answer('از سرگیری لیست پخش')
+            await query.answer("راه اندازی مجدد پخش کننده")
             await restart()
             await query.message.edit(text=await get_playlist_str(), reply_markup=await get_buttons(), disable_web_page_preview=True)
 
