@@ -1467,7 +1467,7 @@ async def get_buttons():
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(f"🎸 Start the Player", callback_data="restart"),
+                    InlineKeyboardButton(f"🎸 شروع پخش", callback_data="restart"),
                     InlineKeyboardButton('🗑 خروج', callback_data='close'),
                 ],
             ]
